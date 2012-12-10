@@ -1,4 +1,6 @@
 <?php
+require dirname(ABSPATH) . '/local-config.php';
+
 @session_start();
 class database {
 	private $hostname;
@@ -9,17 +11,17 @@ class database {
 	private $select_db;
 	
 	public function __construct(){
-		    $this->hostname = "";
-		  $this->username = "";
-		  $this->password = "";
-		  $this->database = "";
+		    $this->hostname = DB_HOSTNAME;
+		  $this->username = DB_USERNAME;
+		  $this->password = DB_PASSWORD;
+		  $this->database = DB_DATABASE;
 	}
 	public function db()
 	 {
-		       $this->hostname = "";
-		  $this->username = "";
-		  $this->password = "";
-		  $this->database = "";
+		       $this->hostname = DB_HOSTNAME;
+		  $this->username = DB_USERNAME;
+		  $this->password = DB_PASSWORD;;
+		  $this->database = DB_DATABASE;
 	 }
 	 
 	public function open_connection()
