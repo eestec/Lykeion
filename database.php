@@ -1,5 +1,5 @@
 <?php
-require dirname(ABSPATH) . '/local-config.php';
+require 'local-config.php';
 
 @session_start();
 class database {
