@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="http://europass.cedefop.europa.eu/xml/cv_en_GB.xsl" type="text/xsl"?>
+<europass:learnerinfo xsi:schemaLocation="http://europass.cedefop.europa.eu/Europass/V2.0 http://europass.cedefop.europa.eu/xml/EuropassSchema_V2.0.xsd" xmlns:europass="http://europass.cedefop.europa.eu/Europass/V2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" locale="en_GB">
+	<docinfo>
+		<issuedate>2011-08-26T15:09:11+02:00</issuedate>
+		<xsdversion>V2.0</xsdversion>
+		<comment>Automatically generated Europass CV</comment>
+	</docinfo>
+	<prefs>
+		<field name="step1.firstName" before="step1.lastName"></field>
+		<field name="step1.addressInfo" keep="true"></field>
+		<field name="step1.telephone" keep="true"></field>
+		<field name="step1.mobile" keep="false"></field>
+		<field name="step1.fax" keep="false"></field>
+		<field name="step1.email" keep="true"></field>
+		<field name="step1.nationality" keep="true"></field>
+		<field name="step1.birthDate" keep="true" format=""></field>
+		<field name="step1.gender" keep="true"></field>
+		<field name="step1.photo" keep="false"></field>
+		<field name="step1.application.label" keep="true"></field>
+		<field name="step3List" keep="true" before="step4List"></field>
+		<field keep="true" name="step3List[0].company.sector.label"></field>
+		<field keep="true" name="step3List[0].company.addressInfo"></field>
+		<field keep="true" name="step3List[0].company.name"></field>
+		<field keep="true" name="step3List[0].activities"></field>
+		<field keep="true" name="step3List[0].position.label"></field>
+		<field name="step4List" keep="true"></field>
+		<field keep="true" name="step4List[0].level.label"></field>
+		<field keep="true" name="step4List[0].educationalOrg.addressInfo"></field>
+		<field keep="true" name="step4List[0].educationalOrg.name"></field>
+		<field keep="true" name="step4List[0].skills"></field>
+		<field keep="true" name="step4List[0].title"></field>
+		<field name="step5.motherLanguages" keep="true"></field>
+		<field name="step5.foreignLanguageList" keep="true"></field>
+		<field keep="true" name="step5.foreignLanguageList[0]"></field>
+		<field name="step6.socialSkills" keep="true"></field>
+		<field name="step6.organisationalSkills" keep="true"></field>
+		<field name="step6.technicalSkills" keep="true"></field>
+		<field name="step6.computerSkills" keep="true"></field>
+		<field name="step6.artisticSkills" keep="true"></field>
+		<field name="step6.otherSkills" keep="true"></field>
+		<field name="step6.drivingLicences" keep="true"></field>
+		<field name="step7.additionalInfo" keep="true"></field>
+		<field name="step7.annexes" keep="true"></field>
+		<field name="grid" keep="false"></field>
+	</prefs>
+	<identification>
+		<firstname>Nedim</firstname>
+		<lastname>Hadzic</lastname>
+		<contactinfo>
+			<address>
+				<addressLine>negdje</addressLine>
+				<municipality>isto</municipality>
+				<postalCode>72000</postalCode>
+				<country>
+					<code>BA</code>
+					<label>Bosnia and Herzegovina</label>
+				</country>
+			</address>
+			<telephone>435</telephone>
+			<fax></fax>
+			<mobile></mobile>
+			<email>nedimhadzija@gmail.com</email>
+		</contactinfo>
+		<demographics>
+			<birthdate>1989-05-12</birthdate>
+			<gender>M</gender>
+			<nationality>
+				<code>BA</code>
+				<label>Bosnian-Herzegovinian</label>
+			</nationality>
+		</demographics>
+	</identification>
+	<application>
+		<label>neso</label>
+	</application>
+	<workexperiencelist>
+		<workexperience>
+			<period>
+				<from>
+					<year>2010</year>
+					<month>--03</month>
+					<day>---02</day>
+				</from>
+				<to>
+					<year>2011</year>
+					<month>--03</month>
+					<day>---05</day>
+				</to>
+			</period>
+			<position>
+				<label>nesto</label>
+			</position>
+			<activities>dfghdfghdkfgh radio pravo</activities>
+			<employer>
+				<name>ta ta</name>
+				<address>
+					<addressLine>negdje</addressLine>
+					<municipality>isto</municipality>
+					<postalCode></postalCode>
+					<country>
+						<label></label>
+					</country>
+				</address>
+				<sector>
+					<label>nikaav</label>
+				</sector>
+			</employer>
+		</workexperience>
+	</workexperiencelist>
+	<educationlist>
+		<education>
+			<period>
+				<from>
+					<year>2008</year>
+					<month>--09</month>
+					<day>---19</day>
+				</from>
+				<to>
+					<year>2011</year>
+					<month>--07</month>
+					<day>---12</day>
+				</to>
+			</period>
+			<title>bachelor</title>
+			<skills>neki</skills>
+			<organisation>
+				<name>etf</name>
+				<address>
+					<addressLine>negdje</addressLine>
+					<municipality>sarajevo</municipality>
+					<postalCode>71000</postalCode>
+					<country>
+						<code>BA</code>
+						<label>Bosnia and Herzegovina</label>
+					</country>
+				</address>
+				<type>fakultet</type>
+			</organisation>
+			<level>
+				<label>bachelor</label>
+			</level>
+			<educationalfield>
+				<label>computer</label>
+			</educationalfield>
+		</education>
+	</educationlist>
+	<languagelist>
+		<language xsi:type="europass:mother">
+			<code>bs</code>
+			<label>Bosnian</label>
+		</language>
+		<language xsi:type="europass:foreign">
+			<code>en</code>
+			<label>English</label>
+			<level>
+				<listening>c2</listening>
+				<reading>c1</reading>
+				<spokeninteraction>c1</spokeninteraction>
+				<spokenproduction>c2</spokenproduction>
+				<writing>c1</writing>
+			</level>
+		</language>
+	</languagelist>
+	<skilllist>
+		<skill type="social">dobar</skill>
+		<skill type="organisational">dobr</skill>
+		<skill type="technical">dobar1</skill>
+		<skill type="computer">dobar2</skill>
+		<skill type="artistic">dobar3</skill>
+		<skill type="other">dobar4</skill>
+		<structured-skill xsi:type="europass:driving">
+			<drivinglicence>B</drivinglicence>
+		</structured-skill>
+	</skilllist>
+	<misclist>
+		<misc type="additional">nista1</misc>
+		<misc type="annexes">nista2</misc>
+	</misclist>
+</europass:learnerinfo>

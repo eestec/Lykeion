@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<europass:learnerinfo xmlns:europass="http://europass.cedefop.europa.eu/Europass/V2.0" europass:schemaLocation="http://europass.cedefop.europa.eu/Europass/V2.0 http://europass.cedefop.europa.eu/xml/EuropassSchema_V2.0.xsd" europass:europass="http://europass.cedefop.europa.eu/Europass/V2.0" europass:xsi="http://www.w3.org/2001/XMLSchema-instance" locale="en_GB">
+  <identification>
+    <firstname>Nedim</firstname>
+    <lastname>Hadžić</lastname>
+    <contactinfo>
+      <address>
+        <addressline></addressline>
+        <municipality>Sarajevo</municipality>
+        <postalcode></postalcode>
+        <country>
+          <code></code>
+          <label>Bosnia and Herzegovina</label>
+        </country>
+      </address>
+      <telephone>+38761575740</telephone>
+      <fax></fax>
+      <email>nedimhadzija@gmail.com</email>
+    </contactinfo>
+    <demographics>
+      <birthdate>1989-05-12</birthdate>
+      <gender>M</gender>
+      <nationality>
+        <code></code>
+        <label>Bosnia and Herzegovina</label>
+      </nationality>
+    </demographics>
+  </identification>
+  <application>
+    <label>Web, mobile and mobile developer</label>
+  </application>
+  <workexperiencelist>
+    <workexperience>
+      <period>
+        <from>
+          <year>2010</year>
+          <month>07</month>
+          <day>23</day>
+        </from>
+        <to>
+          <year>2010</year>
+          <month>07</month>
+          <day>30</day>
+        </to>
+      </period>
+      <position>
+        <label>Head Organizer of International worksshop</label>
+      </position>
+      <activities>Organize the eMovie Academy, international workshop. Find the sponsor who will give money for partic</activities>
+      <employer>
+        <name>EESTEC LC Sarajevo</name>
+        <address>
+          <addressLine>Zmaja od Bosne b.b.</addressLine>
+          <municipality>Sarajevo</municipality>
+          <postalCode>71000</postalCode>
+          <country>
+            <code>BA</code>
+            <label>Bosnia and Herzegovina</label>
+          </country>
+        </address>
+        <sector>
+          <label>International workshop</label>
+        </sector>
+      </employer>
+    </workexperience>
+    <workexperience>
+      <period>
+        <from>
+          <year>2008</year>
+          <month>01</month>
+          <day>02</day>
+        </from>
+        <to>
+          <year>2008</year>
+          <month>02</month>
+          <day>13</day>
+        </to>
+      </period>
+      <position>
+        <label>Computer technical responsible</label>
+      </position>
+      <activities>Fixing software errors, installing operating systems, installing new hardware</activities>
+      <employer>
+        <name>Info studio</name>
+        <address>
+          <addressLine></addressLine>
+          <municipality>Zenica</municipality>
+          <postalCode>72000</postalCode>
+          <country>
+            <code>BA</code>
+            <label>Bosnia and Herzegovina</label>
+          </country>
+        </address>
+        <sector>
+          <label>Information and communication</label>
+        </sector>
+      </employer>
+    </workexperience>
+    <workexperience>
+      <period>
+        <from>
+          <year>2011</year>
+          <month>03</month>
+          <day>29</day>
+        </from>
+        <to>
+          <year>Y</year>
+          <month>M</month>
+          <day>D</day>
+        </to>
+      </period>
+      <position>
+        <label>Chairman</label>
+      </position>
+      <activities>Taking care about whole organisation, members and other board members. www.eestec-sa.ba</activities>
+      <employer>
+        <name>EESTEC LC Sarajevo</name>
+        <address>
+          <addressLine>Zmaja od Bosne b.b.</addressLine>
+          <municipality>Sarajevo</municipality>
+          <postalCode>71000</postalCode>
+          <country>
+            <code>BA</code>
+            <label>Bosnia and Herzegovina</label>
+          </country>
+        </address>
+        <sector>
+          <label>Student organisation. Soft skills</label>
+        </sector>
+      </employer>
+    </workexperience>
+    <workexperience>
+      <period>
+        <from>
+          <year>2010</year>
+          <month>04</month>
+          <day>08</day>
+        </from>
+        <to>
+          <year>2011</year>
+          <month>03</month>
+          <day>29</day>
+        </to>
+      </period>
+      <position>
+        <label>Vice-Chairman</label>
+      </position>
+      <activities>Taking care about the members, website and functionality of the whole organization.</activities>
+      <employer>
+        <name>EESTEC LC Sarajevo</name>
+        <address>
+          <addressLine>Zmaja od Bosne b.b</addressLine>
+          <municipality>Sarajevo</municipality>
+          <postalCode>71000</postalCode>
+          <country>
+            <code>BA</code>
+            <label>Bosnia and Herzegovina</label>
+          </country>
+        </address>
+        <sector>
+          <label>Student organization. Soft skills.</label>
+        </sector>
+      </employer>
+    </workexperience>
+    <workexperience>
+      <period>
+        <from>
+          <year>2011</year>
+          <month>07</month>
+          <day>14</day>
+        </from>
+        <to>
+          <year>Y</year>
+          <month>M</month>
+          <day>D</day>
+        </to>
+      </period>
+      <position>
+        <label>Lykeion responsible</label>
+      </position>
+      <activities>Continue programming on the website. About 40$ code was done and i have to continue and finish the w</activities>
+      <employer>
+        <name>EESTEC</name>
+        <address>
+          <addressLine>Mekelweg 4,</addressLine>
+          <municipality>Delft</municipality>
+          <postalCode>2628</postalCode>
+          <country>
+            <code>NL</code>
+            <label>Netherlands</label>
+          </country>
+        </address>
+        <sector>
+          <label>Web application development</label>
+        </sector>
+      </employer>
+    </workexperience>
+  </workexperiencelist>
+  <educationlist>
+    <education>
+      <period>
+        <from>
+          <year>2010</year>
+          <month>02</month>
+          <day>25</day>
+        </from>
+        <to>
+          <year>2010</year>
+          <month>03</month>
+          <day>05</day>
+        </to>
+      </period>
+      <title>EESTEC Official Trainer</title>
+      <skills>Soft skills training. Passing the knowledge in informal way.</skills>
+      <organisation>
+        <name>EESTEC</name>
+        <address>
+          <addressLine>Mekelweg 4,</addressLine>
+          <municipality>Delft</municipality>
+          <country>
+            <label>Netherlands</label>
+          </country>
+        </address>
+        <type>Student organisation</type>
+      </organisation>
+      <level>
+        <label></label>
+      </level>
+      <educationalfield>
+        <label>Soft skills</label>
+      </educationalfield>
+    </education>
+    <education>
+      <period>
+        <from>
+          <year>2009</year>
+          <month>09</month>
+          <day>20</day>
+        </from>
+        <to>
+          <year>2011</year>
+          <month>07</month>
+          <day>05</day>
+        </to>
+      </period>
+      <title>Network administrator</title>
+      <skills>Network monitoring, switch, router configuration...</skills>
+      <organisation>
+        <name>CISCO</name>
+        <address>
+          <addressLine>Zmaja od Bosne b.b</addressLine>
+          <municipality>Sarajevo</municipality>
+          <country>
+            <label>Bosnia and Herzegovina</label>
+          </country>
+        </address>
+        <type>Technical College</type>
+      </organisation>
+      <level>
+        <label></label>
+      </level>
+      <educationalfield>
+        <label>Computing</label>
+      </educationalfield>
+    </education>
+    <education>
+      <period>
+        <from>
+          <year>2008</year>
+          <month>09</month>
+          <day>22</day>
+        </from>
+        <to>
+          <year>2011</year>
+          <month>07</month>
+          <day>12</day>
+        </to>
+      </period>
+      <title>Bachelor of Computer Science</title>
+      <skills>Management information systems
+	Artificial intelligence
+	LAN, WAN and wireless network topologies
+	Computer architectures
+	New information technologies
+	System and application software
+	Object oriente</skills>
+      <organisation>
+        <name>Faculty of Electrical Engineering</name>
+        <address>
+          <addressLine>Zmaja od Bosne b.b.</addressLine>
+          <municipality>Sarajevo</municipality>
+          <country>
+            <label>Bosnia and Herzegovina</label>
+          </country>
+        </address>
+        <type></type>
+      </organisation>
+      <level>
+        <label>Bachelor</label>
+      </level>
+      <educationalfield>
+        <label>Computer Science and Informatics</label>
+      </educationalfield>
+    </education>
+  </educationlist>
+ 
+  <skilllist>
+		<skill type="social">I am active member of EESTEC since 2008. Working for that organisation i gained social skills and skills to get easier in interaction with people.</skill>
+		<skill type="organisational">In EESTEC i was working on many projects:
+ - EESTEC Congress 2009 - IT member
+ - EWOGS - IT Team leader
+ - eMovie Academy - Head organizer
+ - JobFAIR'11 - IT team member</skill>
+		<skill type="technical"></skill>
+		<skill type="computer">C, C++, C#, PHP, Java, Javascript, Linux, Windows</skill>
+		<skill type="artistic"></skill>
+		<skill type="other"></skill>
+		<structured-skill xsi:type="europass:driving">
+			<drivinglicence>B</drivinglicence></structured-skill></skilllist>
+  <misclist>
+    <additional></additional>
+    <annexes></annexes>
+  </misclist>
+</europass:learnerinfo>

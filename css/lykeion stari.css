@@ -1,0 +1,448 @@
+@charset "utf-8";
+
+.button {
+    /* Disables default styling */
+    border: none;
+    background: #696969;
+    color: #fff;
+
+    /* You need to set font, font size and cursor for buttons */
+    font-size: 12px;
+    font-family: Tahoma;
+    cursor: pointer;
+
+    padding: 5px 13px;
+    font-weight: bold;
+}
+.mattblacktabs{
+width:auto;
+overflow: hidden;
+margin: 0 auto;
+
+margin-bottom: 15px;
+ /*bottom horizontal line that runs beneath tabs*/
+}
+
+.mattblacktabs ul{
+margin: 0 auto;
+
+padding:0.7em;
+ /*offset of tabs relative to browser left edge*/
+font: bold 12px Tahoma;
+list-style-type:none;
+
+}
+
+.mattblacktabs li{
+display:inline;
+margin: 0;
+}
+
+.mattblacktabs li a{
+float: left;
+display: block;
+text-decoration: none;
+margin: 0;
+padding: 3px 3px; /*padding inside each tab*/
+border-right: 1px solid white; /*right divider between tabs*/
+color: white;
+background: #696969; /*background of tabs (default state)*/
+}
+
+.mattblacktabs li a:visited{
+color: white;
+}
+
+.mattblacktabs li a:hover, .mattblacktabs li.selected a{
+background: white; /*background of tabs for hover state, plus tab with "selected" class assigned to its LI */
+}
+
+
+
+
+
+#main_container{
+	display:inline-block;
+	align:center;
+	width:950px;
+	font-family: Tahoma;
+	font-size: 12px;
+}
+
+#central_container{
+	background-image:url(images/central_bg.jpg);
+	background-repeat:repeat-y;
+}
+#footer_container{
+	background-image:url(images/footer_bg.jpg);
+	background-repeat:repeat-y;
+}
+#footer_estec_information{
+	display:inline-block;
+	margin-top:15px;
+	width:400px;
+	background-image:url(images/estec_logo_mali.jpg);
+	background-repeat:no-repeat;
+	padding-left:160px;
+	margin-left:50px;
+}
+#footer_social{
+	float:right;
+	font-family:Tahoma;
+	font-size:18px;
+	color:#888888;
+	margin-right:50px;
+	width:280px;
+}
+#footer_break_line{
+	width:730px;
+	margin-left:70px;
+	border-bottom: 1px solid #C0C0C0;
+	border-top: 1px solid #C0C0C0;	
+	height:2px;
+}
+#footer_lykeion_information{
+	padding-left:130px;
+	background-image:url(images/logo_mali.jpg);
+	background-repeat:no-repeat;
+	margin-top:5px;
+	margin-left:50px;
+	height:60px;	
+}
+#footer_lykeion_information estec{
+	font-family:Tahoma;
+	font-size:12px;
+	font-weight:300;
+	color:#888888;
+}
+#footer_lykeion_information links{
+	font-family:Tahoma;
+	font-size:11px;
+	font-weight:300;
+	color:#ed2229;
+}
+
+
+/*--= CENRALNI DIO ZA POCETNU STRANICU =--*/
+#central_part_first_visit{
+	width:880px;
+	padding-left:50px;
+}
+#central_part_first_visit_intro_text{
+	width:550px;
+	font-family:Tahoma;
+	font-size:13px;
+	color:#888888;
+	display:inline-block;
+}
+#central_part_first_visit_intro_text hd{
+	font-family:Tahoma;
+	font-size:35px;
+	color:#888888;
+}
+#login{
+	width:280px;
+	height:auto;
+	display:inline-block;
+	margin-left:32px;
+	vertical-align:top;
+}
+#join_now{
+	width:100%;
+	display:inline-block;
+	valign:top;
+}
+#students_join{
+	background-color:#cdfd6a;
+	width:250px;
+	display:inline-block;
+	color:#888888;
+	font-size:14px;
+	padding-bottom:15px;
+	padding-left:15px;
+	padding-right:15px;
+	height:100px;
+}
+#students_join join{
+	font:Tahoma;
+	font-weight:bold;
+	font-size:14px;
+	float:right;
+	padding-top:2px;
+	padding-right:10px;
+}
+#students_join hd{
+	font-family:Tahoma;
+	font-size:24px;
+	margin-left:5px;
+}
+#company_join{
+	background-color:#a0b5f8;
+	width:250px;
+	display:inline-block;
+	margin-left:0px;
+	margin-right:0px;
+	display:inline-block;
+	color:#888888;
+	font-size:14px;
+	padding-bottom:15px;
+	padding-left:15px;
+	padding-right:15px;
+	height:100px;	
+}
+#company_join join{
+	font:Tahoma;
+	font-weight:bold;
+	font-size:14px;
+	float:right;
+	padding-top:2px;
+	padding-right:10px;
+}
+#company_join hd{
+	font-family:Tahoma;
+	font-size:24px;
+	margin-left:5px;
+}
+
+#university_join{
+	background-color:#f8df7c;
+	width:250px;
+	display:inline-block;
+	color:#888888;
+	font-size:14px;
+	padding-bottom:15px;
+	padding-left:15px;
+	padding-right:15px;
+	height:100px;	
+}
+#university_join join{
+	font:Tahoma;
+	font-weight:bold;
+	font-size:14px;
+	float:right;
+	padding-top:2px;
+	padding-right:10px;
+}
+#university_join hd{
+	font-family:Tahoma;
+	font-size:24px;
+	margin-left:5px;
+}
+
+#rnd_container {background: #ffffff; margin:1px;}
+    
+    .rnd_top, .rnd_bottom {display:block; background:#ffffff; font-size:1px;}
+    .rnd_b1, .rnd_b2, .rnd_b3, .rnd_b4 {display:block; overflow:hidden;}
+    .rnd_b1, .rnd_b2, .rnd_b3 {height:1px;}
+    .rnd_b2, .rnd_b3, .rnd_b4 {background:#e3e3e3; border-left:1px solid #e3e3e3; border-right:1px solid #e3e3e3;}
+    .rnd_b1 {margin:0 5px; background:#e3e3e3;}
+    .rnd_b2 {margin:0 3px; border-width:0 2px;}
+    .rnd_b3 {margin:0 2px;}
+    .rnd_b4 {height:2px; margin:0 1px;}
+    
+    .rnd_content {
+    display:block;
+    border:0 solid #e3e3e3;
+    border-width:0 1px;
+    padding: 20px;
+	padding-left:20px;
+    background:#e3e3e3;
+    color:#888888;
+	font-family:Tahoma;
+	font-size:12px;
+	font-weight:bold;
+	}
+	.rnd_content login_button{
+		float:right;
+		font-size:14px;
+		margin-top:-5px;
+	}
+
+
+
+
+#rnd1_container {background: #e3e3e3; margin:1px;}
+    
+    .rnd1_top, .rnd1_bottom {display:block; background:#e3e3e3; font-size:1px;}
+    .rnd1_b1, .rnd1_b2, .rnd1_b3, .rnd1_b4 {display:block; overflow:hidden;}
+    .rnd1_b1, .rnd1_b2, .rnd1_b3 {height:1px;}
+    .rnd1_b2, .rnd1_b3, .rnd1_b4 {background:#f5f5f5; border-left:1px solid #f5f5f5; border-right:1px solid #f5f5f5;}
+    .rnd1_b1 {margin:0 5px; background:#f5f5f5;}
+    .rnd1_b2 {margin:0 3px; border-width:0 2px;}
+    .rnd1_b3 {margin:0 2px;}
+    .rnd1_b4 {height:2px; margin:0 1px;}
+   
+    .rnd1_content {
+    display:block;
+    border:0 solid #f5f5f5;
+    border-width:0 1px;
+    padding: 4px;
+    background:#f5f5f5;
+    color:#888888;
+
+    
+
+}
+.rnd1_content:hover {
+    display:block;
+    
+    border:0 solid #f5f5f5;
+    border-width:0 5px;
+    padding: 4px;
+    background:#e3e3e3;
+    color:#a0b5f8;
+
+
+
+}
+
+/*--= Students part style =-- */
+#left_column_students{
+	width:190px;
+	float:left;
+	background-color:#e3e3e3;
+}
+#central_column_students{
+	float:left;
+	width:550px;
+	padding:5px;
+
+}
+#central{
+    width:540px;
+}
+
+#hajde{
+    height: 25px;
+    background-color:#a0b5f8;
+
+	display:inline-block;
+	padding-left: 4px;
+        padding-right: 4px;
+        border-bottom: thin;
+	
+	color:#888888;
+	
+	
+        border-right:thick solid;
+    
+}
+#hajde1{
+    height: 25px;
+    background-color:#a0b5f8;
+
+	display:inline-block;
+	padding-left: 4px;
+        padding-right: 4px;
+        border-bottom: thin;
+
+	color:#888888;
+
+
+        
+
+}
+#hajde a{
+    font-size: 12px;
+}
+#hajde a:hover{
+    font-weight: bold;
+}
+
+#hajde1 a{
+    font-size: 12px;
+}
+#hajde1 a:hover{
+    font-weight: bold;
+}
+
+
+
+
+#Map a:hover{
+    border: solid red;
+    overflow: visible;
+}
+
+.x a:hover {
+ 
+font-weight: bold;
+
+}
+
+
+
+
+#right_column_students{
+	width:190px;
+	float:right;
+	background-color:#e3e3e3;
+}
+
+
+/*--= Wall style =--*/
+#wall_article_news{
+	background-color:#E1E1E1;
+	width:100%;
+	border: 1px dashed #a0b5f8;
+}
+#wall_article_job{
+	background-color:#E1E1E1;
+	width:100%;
+	border: 1px dashed #a0b5f8;
+}
+#wall_article_PhD{
+	background-color:#E1E1E1;
+	width:100%;
+	border: 1px dashed #a0b5f8;
+}
+#wall_article_headline{
+	font-family:Tahoma;
+	font-size:14px;
+	font-weight:bold;
+	width:100%;
+	padding-bottom:3px;
+	padding-left:7px;
+}
+#wall_article_headline a:hover{
+    color: #a0b5f8;
+    font-size: 16px;
+}
+
+#wall_article_headline a, span{
+	text-decoration:none;
+}
+#wall_article_intro{
+	font-size:12px;
+	width:100%;
+	color:#464444;
+	padding:2px;
+}
+#wall_article_date_and_other{
+	font-size:11px;
+	color:#464444;
+	width:100%px;
+	padding:2px;
+	padding-right:10px;
+}
+
+#password_change_div{
+	width:90%;
+}
+#error_message{
+	display:block;
+	width:400px;
+	height:100px;
+	margin:2px;;
+	padding:5px;
+	background-color:#888888;
+	position:absolute;
+	left:38%;
+	top:45%;
+	z-index:101;
+	opacity: 0.9;
+	font-size:14px;
+	color:#FFFFFF;
+    text-align: center;
+    vertical-align: middle;
+}

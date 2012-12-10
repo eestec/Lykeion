@@ -1,0 +1,226 @@
+<?php
+error_reporting(0);
+require_once('tcpdf/config/lang/eng.php');
+require_once('tcpdf/tcpdf.php');
+
+class MYPDF extends TCPDF {
+
+	//Header
+	public function Header() {
+		// Logo
+		$image_file = 'classes/tcpdf/jobfairlogo.png';
+		$this->Image($image_file, 135, 10, 60, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+		// Title
+		$this->SetFont('dejavusans', '', 20, '', true);
+		$this->SetY($this->GetY() + 8);
+		$this->Cell(0, 0, 'Curriculum Vitae', 0, false, 'L', 0, '', 0, false, 'M', 'M');
+		$this->SetLineWidth(0.4);
+		$this->Line(15,27,195,27);
+		$this->setTopMargin(35);
+	}
+
+	// Footer
+	public function Footer() {
+		$this->SetY(-15);
+		$this->SetFont('helvetica', 'I', 8);
+		$this->Cell(0, 10, 'Strana '.$this->getAliasNumPage().'/'.$this->getAliasNbPages(), 0, false, 'R', 0, '', 0, false, 'T', 'M');
+	}
+}
+
+/* Pomocne funkcije */
+function ispisiNaslov($naslov, $pdf) {
+	$pdf->SetFont('dejavusans', '', 12, '', true);
+	$pdf->WriteHTML('<div style="background-color:#880000;color:white;">&nbsp;'.$naslov.'</div>');
+	$pdf->SetFont('dejavusans', '', 10, '', true);
+}
+
+function ispisiNiz($niz, $pdf) {
+	$html = '<p style="line-height: 1.5em;"><table cellspacing="2" width="960">';
+	foreach ($niz as $key=>$value) {
+		if ($key == "" && $value == "") {
+			$html .= "<tr><td></td><td></td></tr>";
+		} else {
+			$html .= '<tr>
+						<td width="160" align="right">'.$key.':&nbsp;&nbsp;</td><td><i>'.$value.'</i></td>
+					  </tr>';
+		}
+	}
+	$html .= '</table></p>';
+	$pdf->writeHTML($html);
+}
+
+function kreirajPDF($osoba) {
+	$pdf = new MYPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+	$pdf->SetCreator(PDF_CREATOR);
+	$pdf->SetAuthor('EESTEC JOBFAIR 2011 CV GENERATOR');
+	$pdf->SetTitle('Curriculum Vitae');
+	$pdf->SetSubject('Curriculum Vitae');
+	$pdf->SetKeywords('CV');
+	$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+	$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+	$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+	$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+	$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
+	$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+	$pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+	$pdf->setLanguageArray($l);
+	$pdf->setFontSubsetting(true);
+	$pdf->SetFont('dejavusans', '', 10, '', true);
+	$pdf->SetAutoPageBreak(true, 20);
+	$pdf->AddPage();
+
+	$kontaktPodaci = array();
+	if ($osoba->getIme() != "") 
+		$kontaktPodaci['Ime'] = $osoba->getIme();
+	if ($osoba->getIme() != "") 
+		$kontaktPodaci['Prezime'] = $osoba->getPrezime();
+	if ($osoba->getGrad() != "") 
+		$kontaktPodaci['Grad'] = $osoba->getGrad();
+	if ($osoba->getAdresa() != "") 
+		$kontaktPodaci['Adresa'] = $osoba->getAdresa();
+	if ($osoba->getEmail() != "") 
+		$kontaktPodaci['E-Mail'] = $osoba->getEmail();
+	if ($osoba->getMobitel() != "") 
+		$kontaktPodaci['Mobitel'] = $osoba->getMobitel();
+	if ($osoba->getDatumRodjenja() != "") 
+		$kontaktPodaci['Datum rođenja'] = $osoba->getDatumRodjenja();
+	if ($osoba->getSpol() != "") 
+		$kontaktPodaci['Spol'] = $osoba->getSpol();
+	if ($osoba->getZeljenoZaposlenje() != "") 
+		$konktaktPodaci['Željeno zaposlenje'] = $osoba->getZeljenoZaposlenje();
+	if ($osoba->getIsPartTime() != "" && $osoba->getIsFullTime() != "") 
+		$kontaktPodaci['Radno vrijeme'] = (($osoba->getIsPartTime() && $osoba->getIsFullTime()) ? "Full time, Part time" : ($osoba->getIsPartTime() ? 'Part time' : ($osoba->getIsFullTime() ? 'Full time' : '/')));
+
+	if (sizeof($kontaktPodaci) != 0) {
+		ispisiNaslov("Kontakt podaci", $pdf);
+		ispisiNiz($kontaktPodaci, $pdf);
+	}
+
+	$poslovi = $osoba->getJobs();
+	if (sizeof($poslovi) != 0) {
+		ispisiNaslov("Radno iskustvo", $pdf);
+		for ($i = 0; $i < sizeof($poslovi); ++$i) {
+			$radnoIskustvo = array();
+				if ($poslovi[$i]->getStartDate() != "" && $poslovi[$i]->getEndDate() != "")
+					$radnoIskustvo['Period kada ste radili'] = $poslovi[$i]->getStartDate() . ' - ' . $poslovi[$i]->getEndDate();
+				if ($poslovi[$i]->getPozicija() != "")
+					$radnoIskustvo['Pozicija'] = $poslovi[$i]->getPozicija();
+				if ($poslovi[$i]->getAktivnost() != "")
+					$radnoIskustvo['Opis aktivnosti'] = $poslovi[$i]->getAktivnost();
+				if ($poslovi[$i]->getPoslodavac() != "")
+					$radnoIskustvo['Naziv poslodavca'] = $poslovi[$i]->getPoslodavac();
+				if (sizeof($radnoIskustvo) != 0)
+					ispisiNiz($radnoIskustvo, $pdf);
+		}
+	}
+
+	$skola = $osoba->getEducation();
+	if (sizeof($skola) != 0) {
+		ispisiNaslov("Podaci o obrazovanju", $pdf);
+		for ($i = 0; $i < sizeof($skola); ++$i) {
+			$obrazovanje = array();
+			if ($skola[$i]->getStartDate() != "" && $skola[$i]->getEndDate() != "")
+				$obrazovanje['Period'] = $skola[$i]->getStartDate() . ' - ' . $skola[$i]->getEndDate();
+			if ($skola[$i]->getFakultet() != "")
+				$obrazovanje['Ime fakulteta'] = $skola[$i]->getFakultet();
+			if ($skola[$i]->getSmjer() != "")
+				$obrazovanje['Smjer'] = $skola[$i]->getSmjer();
+			if ($skola[$i]->getGodinaStudija() != "")
+				$obrazovanje['Godina studija'] = $skola[$i]->getGodinaStudija();
+			if (sizeof($obrazovanje) != 0)
+				ispisiNiz($obrazovanje, $pdf);
+		}
+	}
+	if ($osoba->getMaternjiJezik() != "") 
+		ispisiNiz(array("Maternji jezik" => $osoba->getMaternjiJezik()), $pdf);
+
+    $jezici = $osoba->getJezici();
+	if (sizeof($jezici) != 0) {
+		ispisiNaslov("Drugi jezici", $pdf);
+		for ($i = 0; $i < sizeof($jezici); ++$i) {
+			$drugiJezici = array();
+			if ($jezici[$i]->getNaziv() != "")
+				$drugiJezici['Jezik'] = $jezici[$i]->getNaziv();
+			if ($jezici[$i]->getRazumijevanje() != "")
+				$drugiJezici['Razumijevanje'] = $jezici[$i]->getRazumijevanje();
+			if ($jezici[$i]->getGovor() != "")
+				$drugiJezici['Govor'] = $jezici[$i]->getGovor();
+			if ($jezici[$i]->getPisanje() != "")
+				$drugiJezici['Pisanje'] = $jezici[$i]->getPisanje();
+			if (sizeof($drugiJezici) != 0)
+				ispisiNiz($drugiJezici, $pdf);
+		}
+	}
+	
+	$kompjuterskeVjestine = '';
+	$t = $osoba->getComputerSkills();
+	for ($i = 0; $i < sizeof($t); ++$i) {
+			$kompjuterskeVjestine .= $t[$i]->getOpis() . ((sizeof($t) != 1) && (sizeof($t) != ($i+1)) ? ', ' : '');
+	}
+
+	$osobneVjestine = array();
+	if ($osoba->getDrustveneVjestine() != "")
+		$osobneVjestine['Društvene vještine'] = $osoba->getDrustveneVjestine();
+	if ($osoba->getOrganizacijskeVjestine() != "") 
+		$osobneVjestine['Organizacijske vještine'] = $osoba->getOrganizacijskeVjestine();
+	if ($osoba->getTehnickeVjestine() != "")
+		$osobneVjestine['Tehničke vještine'] = $osoba->getTehnickeVjestine();
+	if ($kompjuterskeVjestine != "")
+		$osobneVjestine['Kompjuterske vještine'] = $kompjuterskeVjestine;
+	if ($osoba->getDrugeVjestine() != "")
+		$osobneVjestine['Druge vještine'] = $osoba->getDrugeVjestine();
+	if ($osoba->getVozackaDozvola() != "")
+		$osobneVjestine['Vozačka dozvola'] = ($osoba->getVozackaDozvola() ? 'Da' : 'Ne');
+	if ($osoba->getDodatneInformacije() != "")
+		$osobneVjestine['Dodatne informacije'] = $osoba->getDodatneInformacije();
+
+	if (sizeof($osobneVjestine) != 0) {
+		ispisiNaslov("Osobne vještine i kompetencije", $pdf);
+		ispisiNiz($osobneVjestine, $pdf);
+	}
+
+	return $pdf->Output('JobFair2011_CV.pdf', 'S');
+}
+
+function posaljiMail($to, $pdfData, $info) { 
+  if (isset($info['subject']))
+	  $subject = $info['subject'];
+  else 
+	  $subject = "[JobFair 2011] Vas CV je spreman!";
+ 
+  if (isset($info['from']))
+	  $from = $info['from'];
+  else
+	  $from = "noreply@jobfair.com";
+  
+  if (isset($info['message']))
+	  $poruka = $info['message']."\n";
+  else
+	  $poruka = "Postovani,\nu prilogu se nalazi Vas CV koji ste ispunili na nasoj web stranici.";
+
+  $random_hash = md5(date('r', time()));
+  
+  $headers = "From: $from\r\nReply-To: $from";
+ 
+  $headers .= "\r\nContent-Type: multipart/mixed; boundary=\"PHP-mixed-".$random_hash."\"";
+ 
+  $attachment = chunk_split(base64_encode($pdfData));
+
+  $output = "
+--PHP-mixed-$random_hash
+Content-Type: multipart/alternative; boundary='PHP-alt-$random_hash'
+
+".$poruka."
+
+--PHP-mixed-$random_hash
+Content-Type: application/pdf; name=JobFair2011_CV.pdf
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment
+ 
+$attachment
+--PHP-mixed-$random_hash--";
+		 
+	mail($to, $subject, $output, $headers);
+}
+
+?>

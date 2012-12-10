@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<europass:learnerinfo xmlns:europass="http://europass.cedefop.europa.eu/Europass/V2.0" xsi:schemaLocation="http://europass.cedefop.europa.eu/Europass/V2.0 http://europass.cedefop.europa.eu/xml/EuropassSchema_V2.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" locale="en_GB">
+  <identification>
+    <firstname>Nedim</firstname>
+    <lastname>Hadžić</lastname>
+    <contactinfo>
+      <address>
+        <addressline>Gradacacka 31dsfsdf</addressline>
+        <municipality>Sarajevo</municipality>
+        <postalcode></postalcode>
+        <country>
+          <code></code>
+          <label>Bosnia and Herzegovina</label>
+        </country>
+      </address>
+      <telephone>+38761575740</telephone>
+      <fax>43343</fax>
+      <email>nedimhadzija@gmail.com</email>
+    </contactinfo>
+    <demographics>
+      <birthdate>1989-05-12</birthdate>
+      <gender>M</gender>
+      <nationality>
+        <code></code>
+        <label>Bosnia and Herzegovina</label>
+      </nationality>
+    </demographics>
+  </identification>
+  <application>
+    <label>nothing</label>
+  </application>
+  <workexperiencelist>
+    <workexperience>
+      <period>
+        <from>
+          <year>2011</year>
+          <month>07</month>
+          <day>14</day>
+        </from>
+        <to>
+          <year>2018</year>
+          <month>4</month>
+          <day>1</day>
+        </to>
+      </period>
+      <position>
+        <label>Lykeion portal responsible</label>
+      </position>
+      <activities>Continue programming on the website. About 40% code was done and I have to continue and finish the website. Beside that, my responsibilities were gathering the team who will promote, write project document, organize the promotion. The website, lykeion.eestec.net was launched on 9th of November 2011 and till now has 390 registered users.</activities>
+      <employer>
+        <name>EESTEC</name>
+        <address>
+          <addressLine>Mekelweg 4,</addressLine>
+          <municipality>Delft</municipality>
+          <postalCode></postalCode>
+          <country>
+            <code></code>
+            <label>Netherlands</label>
+          </country>
+        </address>
+        <sector>
+          <label>Web application development</label>
+        </sector>
+      </employer>
+    </workexperience>
+    <workexperience>
+      <period>
+        <from>
+          <year>2011</year>
+          <month>03</month>
+          <day>29</day>
+        </from>
+        <to>
+          <year>Y</year>
+          <month>M</month>
+          <day>D</day>
+        </to>
+      </period>
+      <position>
+        <label>Chairman</label>
+      </position>
+      <activities></activities>
+      <employer>
+        <name>EESTEC LC Sarajevo</name>
+        <address>
+          <addressLine>Zmaja od Bosne b.b.</addressLine>
+          <municipality>Sarajevo</municipality>
+          <postalCode></postalCode>
+          <country>
+            <code></code>
+            <label>Bosnia and Herzegovina</label>
+          </country>
+        </address>
+        <sector>
+          <label>Student organisation. Soft skills</label>
+        </sector>
+      </employer>
+    </workexperience>
+    <workexperience>
+      <period>
+        <from>
+          <year>2011</year>
+          <month>08</month>
+          <day>19</day>
+        </from>
+        <to>
+          <year>2011</year>
+          <month>12</month>
+          <day>28</day>
+        </to>
+      </period>
+      <position>
+        <label>JobFAIR'11 Head Organizer</label>
+      </position>
+      <activities>Gathering the organizing team. Doing the fund raising for the Job fair. Contacting the companies and offering them a place to take on Job fair. Constantly motivating team leaders and their members. Taking care about the whole process of organizing the event. Job fair  took  place 5-6.12.2011. on the Faculty of Electrical Engineering in Sarajevo. www.jobfair.ba</activities>
+      <employer>
+        <name>EESTEC LC Sarajevo</name>
+        <address>
+          <addressLine>Zmaja od bosne bb</addressLine>
+          <municipality>Sarajevo</municipality>
+          <postalCode></postalCode>
+          <country>
+            <code></code>
+            <label>Bosnia and Herzegovina</label>
+          </country>
+        </address>
+        <sector>
+          <label>Other service activities</label>
+        </sector>
+      </employer>
+    </workexperience>
+  </workexperiencelist>
+  <educationlist>
+    <education>
+      <period>
+        <from>
+          <year>2008</year>
+          <month>09</month>
+          <day>22</day>
+        </from>
+        <to>
+          <year>2011</year>
+          <month>07</month>
+          <day>12</day>
+        </to>
+      </period>
+      <title>Bachelor of Computing and Informatics</title>
+      <skills>http://www.etf.unsa.ba/index.php?id=374&#13;
+http://www.etf.unsa.ba/index.php?id=377</skills>
+      <organisation>
+        <name>Faculty of Electrical Engineering, University of Sarajevo</name>
+        <address>
+          <addressLine>Zmaja od Bosne b.b.</addressLine>
+          <municipality>Sarajevo</municipality>
+          <country>
+            <label>Bosnia and Herzegovina</label>
+          </country>
+        </address>
+        <type>University</type>
+      </organisation>
+      <level>
+        <label>Bachelor of Electrical Engineering</label>
+      </level>
+      <educationalfield>
+        <label>Computing and Informatics</label>
+      </educationalfield>
+    </education>
+    <education>
+      <period>
+        <from>
+          <year>2009</year>
+          <month>09</month>
+          <day>20</day>
+        </from>
+        <to>
+          <year>2011</year>
+          <month>07</month>
+          <day>05</day>
+        </to>
+      </period>
+      <title>Cisco CCNA</title>
+      <skills>-Network Fundamentals&#13;
+-Routing Protocols and Concepts&#13;
+-LAN Switching and Wireless&#13;
+-Accessing the WAN &#13;
+</skills>
+      <organisation>
+        <name>CISCO</name>
+        <address>
+          <addressLine>Zmaja od Bosne b.b</addressLine>
+          <municipality>Sarajevo</municipality>
+          <country>
+            <label>Bosnia and Herzegovina</label>
+          </country>
+        </address>
+        <type>Technical College</type>
+      </organisation>
+      <level>
+        <label></label>
+      </level>
+      <educationalfield>
+        <label>Networking</label>
+      </educationalfield>
+    </education>
+    <education>
+      <period>
+        <from>
+          <year>2011</year>
+          <month>09</month>
+          <day>19</day>
+        </from>
+        <to>
+          <year>-&gt;</year>
+          <month>-&gt;</month>
+          <day>-&gt;</day>
+        </to>
+      </period>
+      <title>Master of Computing and Informatics</title>
+      <skills>http://www.etf.unsa.ba/index.php?id=453</skills>
+      <organisation>
+        <name>Faculty of Electrical Engineering, University of Sarajevo</name>
+        <address>
+          <addressLine>Zmaja od Bosne bb</addressLine>
+          <municipality>Sarajevo</municipality>
+          <country>
+            <label>Bosnia and Herzegovina</label>
+          </country>
+        </address>
+        <type>University</type>
+      </organisation>
+      <level>
+        <label>Master of Electrical Engineering</label>
+      </level>
+      <educationalfield>
+        <label>Computing and Informatics</label>
+      </educationalfield>
+    </education>
+  </educationlist>
+  <languagelist>
+    <language xsi:type="europass:mother">
+      <code></code>
+      <label>Bosnian</label>
+    </language>
+    <language xsi:type="europass:foreign">
+      <code></code>
+      <label>English</label>
+      <level>
+        <listening>c1</listening>
+        <reading>c1</reading>
+        <spokeninteraction>c1</spokeninteraction>
+        <spokenproduction>c1</spokenproduction>
+        <writing>c1</writing>
+      </level>
+    </language>
+  </languagelist>
+  <skilllist>
+    <skill type="social">I am active member of EESTEC since 2008. Working for that organisation I gained social skills and because of that I can get easier in interaction with people. All the activities were done in the team so it helped me to learn more about team work and to be productive team member.</skill>
+    <skill type="organisational">In EESTEC I was working on many projects:
+ - EESTEC Congress 2009 - IT member
+ - EWOGS - IT Team leader
+ - eMovie Academy 2010 (ema.eestec-sa.ba/ema2010.html) - Head organizer
+ - JobFAIR'10 - IT team member
+ - EWOGS 2 (ewogs.eestec-sa.ba) - member of organizing team
+ - eMovie Academy 2011 (ema.eestec.ba) - member of organizing team
+ - JobFAIR'11 (jobfair.ba) -Head organizer.
+
+Working on all these projects helped me to improve my organisational, communication and leadership skills.</skill>
+    <skill type="technical"></skill>
+    <skill type="computer">Since this is my profession, I will mention programming languages that I already know:
+ -C
+ -C++
+ -C#
+ -PHP
+ -Java
+ -Javascript
+-SQL
+
+Working on Linux and Windows platforms.</skill>
+    <skill type="artistic"></skill>
+    <skill type="other"></skill>
+    <structured-skill xsi:type="europass:driving">
+      <drivinglicence>1</drivinglicence>
+    </structured-skill>
+  </skilllist>
+  <misclist>
+    <misc type="additional">My references are all people who worked with me on mentioned projects. A letters od recommendation I am sending additionally.</misc>
+    <misc type="annexes">Official website of Faculty of Electrical Engineering - http://www.etf.unsa.ba/index.php?id=42
+Official website of EESTEC International - http://eestec.net/
+Lykeion portal - http://lykeion.eestec.net/
+Official website of EESTEC LC Sarajevo - http://eestec-sa.ba/</misc>
+  </misclist>
+</europass:learnerinfo>

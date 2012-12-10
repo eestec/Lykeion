@@ -1,0 +1,506 @@
+-- phpMyAdmin SQL Dump
+-- version 2.10.3
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Generation Time: Jul 09, 2011 at 07:45 PM
+-- Server version: 5.0.51
+-- PHP Version: 5.2.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 
+-- Database: `lykeion`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `articles`
+-- 
+
+CREATE TABLE `articles` (
+  `ID` int(11) NOT NULL auto_increment,
+  `title` text NOT NULL,
+  `intro` text NOT NULL,
+  `tekst` longtext NOT NULL,
+  `image` text NOT NULL,
+  `category` int(11) NOT NULL,
+  `comments` int(11) NOT NULL,
+  `editable` int(11) NOT NULL,
+  `views` int(11) NOT NULL,
+  `publish` int(11) NOT NULL,
+  `gallery` int(11) NOT NULL,
+  `metatags` int(11) NOT NULL,
+  `jobtype` int(11) NOT NULL,
+  `scolarship` int(11) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `user` int(11) NOT NULL,
+  `user_type` varchar(50) NOT NULL,
+  `date_of` datetime NOT NULL,
+  `deleted` tinyint(1) NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+-- 
+-- Dumping data for table `articles`
+-- 
+
+INSERT INTO `articles` VALUES (4, 'Testna', 'Testna', 'Testna1', '', 0, 0, 0, 0, 6, -1, 6, -1, 1, 'active', 1, 'university', '2011-02-03 15:50:12', 0);
+INSERT INTO `articles` VALUES (5, 'dsa', 'fsdfd', 'dfdsfds', '', 0, 0, 0, 0, 7, -1, 7, -1, 2, 'active', 1, 'university', '2011-02-05 15:29:58', 0);
+INSERT INTO `articles` VALUES (6, 'yrtytr', 'yrtyt', 'weqewq', '', 0, 0, 0, 0, 8, -1, 8, -1, 3, 'active', 1, 'university', '2011-02-05 15:30:58', 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `category_articles`
+-- 
+
+CREATE TABLE `category_articles` (
+  `ID` int(11) NOT NULL auto_increment,
+  `name` text NOT NULL,
+  `description` text NOT NULL,
+  `creation` datetime NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='tabela sa kategorijama za artikle' AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `category_articles`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `companys`
+-- 
+
+CREATE TABLE `companys` (
+  `ID` int(11) NOT NULL auto_increment,
+  `Name` varchar(300) NOT NULL,
+  `Field_of_work` varchar(300) NOT NULL,
+  `Number_of_emplyees` varchar(300) NOT NULL,
+  `Contact_person` varchar(300) NOT NULL,
+  `Address` varchar(300) NOT NULL,
+  `City` varchar(300) NOT NULL,
+  `Country` varchar(300) NOT NULL,
+  `Phone_number` varchar(50) NOT NULL,
+  `Fax_number` varchar(50) NOT NULL,
+  `Email` varchar(150) NOT NULL,
+  `Web` varchar(150) NOT NULL,
+  `Facebook` varchar(150) NOT NULL,
+  `Linkedin` varchar(150) NOT NULL,
+  `Twitter` varchar(150) NOT NULL,
+  `Username` varchar(100) NOT NULL,
+  `Password` varchar(100) NOT NULL,
+  `Logo` varchar(200) NOT NULL,
+  `Login_email` varchar(150) NOT NULL,
+  `Date_of_exire` datetime NOT NULL,
+  `date_of_creation` datetime NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+-- 
+-- Dumping data for table `companys`
+-- 
+
+INSERT INTO `companys` VALUES (1, 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a@gmail.com', 'a', 'a', 'a', 'a', 'aaa', 'aaaaaa', 'a', 'a@gmail.com', '2011-02-20 23:38:29', '2011-02-20 23:38:29');
+INSERT INTO `companys` VALUES (2, 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a@gmail.com', 'a', 'a', 'a', 'a', 'aaa', 'aaaaaa', 'a', 'a@gmail.com', '2011-02-20 23:38:29', '2011-02-20 23:38:29');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `jobs_intersips`
+-- 
+
+CREATE TABLE `jobs_intersips` (
+  `ID` bigint(20) NOT NULL auto_increment,
+  `type` varchar(50) NOT NULL,
+  `Number_of_interns` bigint(20) NOT NULL,
+  `Duration` varchar(500) NOT NULL,
+  `Paid_intership` tinyint(1) NOT NULL,
+  `Accomodation_costs` tinyint(1) NOT NULL,
+  `Country` varchar(200) NOT NULL,
+  `City` varchar(200) NOT NULL,
+  `Position` varchar(600) NOT NULL,
+  `Deadline` datetime NOT NULL,
+  `Forgein_language` text NOT NULL,
+  `Internduties` text NOT NULL,
+  `Academic_level` text NOT NULL,
+  `Driving_licence` tinyint(1) NOT NULL,
+  `Type_of` tinyint(1) NOT NULL,
+  `date_of_creation` datetime NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+-- 
+-- Dumping data for table `jobs_intersips`
+-- 
+
+INSERT INTO `jobs_intersips` VALUES (1, '', 0, '', 0, 0, '', '', '', '0000-00-00 00:00:00', '', '', '', 0, 0, '0000-00-00 00:00:00');
+INSERT INTO `jobs_intersips` VALUES (2, '', 0, '', 0, 0, '', '', '', '0000-00-00 00:00:00', '', '', '', 0, 0, '0000-00-00 00:00:00');
+INSERT INTO `jobs_intersips` VALUES (3, '', 0, '', 0, 0, '', '', '', '0000-00-00 00:00:00', '', '', '', 0, 0, '0000-00-00 00:00:00');
+INSERT INTO `jobs_intersips` VALUES (4, '', 0, '', 0, 0, '', '', '', '0000-00-00 00:00:00', '', '', '', 0, 0, '0000-00-00 00:00:00');
+INSERT INTO `jobs_intersips` VALUES (5, '', 0, '', 0, 0, '', '', '', '0000-00-00 00:00:00', '', '', '', 0, 0, '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `metatags`
+-- 
+
+CREATE TABLE `metatags` (
+  `ID` int(11) NOT NULL auto_increment,
+  `title` varchar(300) character set latin1 default NULL,
+  `keywords` text character set latin1,
+  `description` text character set latin1,
+  `custom_metatags` text character set latin1,
+  PRIMARY KEY  (`ID`),
+  UNIQUE KEY `ID` (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=cp1250 COLLATE=cp1250_bin COMMENT='tabela koja sadrzi metatagove za article i galerije odnoso s' AUTO_INCREMENT=9 ;
+
+-- 
+-- Dumping data for table `metatags`
+-- 
+
+INSERT INTO `metatags` VALUES (1, '', '', '', '');
+INSERT INTO `metatags` VALUES (2, '', '', '', '');
+INSERT INTO `metatags` VALUES (3, '', '', '', '');
+INSERT INTO `metatags` VALUES (4, '', '', '', '');
+INSERT INTO `metatags` VALUES (5, '', '', '', '');
+INSERT INTO `metatags` VALUES (6, '', '', '', '');
+INSERT INTO `metatags` VALUES (7, '', '', '', '');
+INSERT INTO `metatags` VALUES (8, '', '', '', '');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `mm_messages_clients`
+-- 
+
+CREATE TABLE `mm_messages_clients` (
+  `ID` bigint(20) unsigned NOT NULL auto_increment,
+  `ID_conversation` bigint(20) NOT NULL,
+  `User` int(11) NOT NULL,
+  `Readed` tinyint(1) NOT NULL,
+  `Deleted` tinyint(1) NOT NULL default '0',
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+-- 
+-- Dumping data for table `mm_messages_clients`
+-- 
+
+INSERT INTO `mm_messages_clients` VALUES (1, 1, 2, 0, 0);
+INSERT INTO `mm_messages_clients` VALUES (2, 1, 3, 1, 0);
+INSERT INTO `mm_messages_clients` VALUES (3, 1, 1, 1, 0);
+INSERT INTO `mm_messages_clients` VALUES (4, 2, 2, 0, 0);
+INSERT INTO `mm_messages_clients` VALUES (5, 2, 5, 1, 0);
+INSERT INTO `mm_messages_clients` VALUES (6, 2, 6, 1, 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `mm_messages_conversation`
+-- 
+
+CREATE TABLE `mm_messages_conversation` (
+  `ID` bigint(20) unsigned NOT NULL auto_increment,
+  `Subject` varchar(250) NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+-- 
+-- Dumping data for table `mm_messages_conversation`
+-- 
+
+INSERT INTO `mm_messages_conversation` VALUES (1, 'Utakmica');
+INSERT INTO `mm_messages_conversation` VALUES (2, 'Kako je kod tebe');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `mm_messages_conv_users`
+-- 
+
+CREATE TABLE `mm_messages_conv_users` (
+  `ID` int(10) unsigned NOT NULL auto_increment,
+  `User_ID` int(10) unsigned NOT NULL,
+  `User` varchar(100) NOT NULL,
+  `ID_user` int(10) unsigned NOT NULL,
+  `User_type` varchar(50) NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='ID_user je za poruke a User_ID je od usera( student, company' AUTO_INCREMENT=7 ;
+
+-- 
+-- Dumping data for table `mm_messages_conv_users`
+-- 
+
+INSERT INTO `mm_messages_conv_users` VALUES (1, 1, 'Amer', 1, 'student');
+INSERT INTO `mm_messages_conv_users` VALUES (2, 2, 'Mirza', 2, 'student');
+INSERT INTO `mm_messages_conv_users` VALUES (3, 1, 'etf', 3, 'university');
+INSERT INTO `mm_messages_conv_users` VALUES (5, 4, 'mirza', 0, 'student');
+INSERT INTO `mm_messages_conv_users` VALUES (6, 8, 'hrkljus', 0, 'student');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `mm_messages_msg`
+-- 
+
+CREATE TABLE `mm_messages_msg` (
+  `ID` bigint(20) unsigned NOT NULL auto_increment,
+  `ID_conversation` bigint(20) unsigned NOT NULL,
+  `Headline` varchar(250) NOT NULL,
+  `MSG` text NOT NULL,
+  `User` int(11) NOT NULL,
+  `Send` datetime NOT NULL,
+  `IP` varchar(25) NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+
+-- 
+-- Dumping data for table `mm_messages_msg`
+-- 
+
+INSERT INTO `mm_messages_msg` VALUES (1, 1, 'Utakmica', 'Hocemo li gledati utakmicu?', 1, '2011-02-10 00:47:12', '127.0.0.1');
+INSERT INTO `mm_messages_msg` VALUES (10, 2, 'Kako je kod tebe', 'Kako je kod tebe. Jel sve ok', 6, '2011-02-15 14:46:10', '127.0.0.1');
+INSERT INTO `mm_messages_msg` VALUES (9, 1, 'fdsfds', 'Test 2', 1, '2011-02-10 01:05:17', '127.0.0.1');
+INSERT INTO `mm_messages_msg` VALUES (8, 1, '', 'Da vidimo da li radi read kako valja', 1, '2011-02-10 01:03:17', '127.0.0.1');
+INSERT INTO `mm_messages_msg` VALUES (7, 1, '', 'fdsfds', 1, '2011-02-10 01:02:12', '127.0.0.1');
+INSERT INTO `mm_messages_msg` VALUES (11, 2, '', 'dobro je', 4, '2011-02-15 14:55:00', '127.0.0.1');
+INSERT INTO `mm_messages_msg` VALUES (12, 2, '', 'fdsfdsfds', 6, '2011-02-15 15:24:17', '127.0.0.1');
+INSERT INTO `mm_messages_msg` VALUES (13, 2, 't', 'tst', 5, '2011-02-15 15:27:40', '127.0.0.1');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `publish_articles`
+-- 
+
+CREATE TABLE `publish_articles` (
+  `ID` int(11) NOT NULL auto_increment,
+  `article` int(11) NOT NULL,
+  `from` datetime default NULL,
+  `to` datetime default NULL,
+  `reads` int(11) default NULL,
+  `status` varchar(20) NOT NULL,
+  `published` varchar(20) NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='tabela koja sadrzi vremena odnosno broj prikazivanja za clan' AUTO_INCREMENT=9 ;
+
+-- 
+-- Dumping data for table `publish_articles`
+-- 
+
+INSERT INTO `publish_articles` VALUES (1, 0, '2011-01-27 06:03:48', '2011-07-28 12:00:00', 0, 'publish', 'forever');
+INSERT INTO `publish_articles` VALUES (2, 0, '2011-01-27 06:05:55', '2011-07-28 12:00:00', 0, 'publish', 'forever');
+INSERT INTO `publish_articles` VALUES (3, 0, '2011-01-28 12:03:46', '2011-07-29 12:00:00', 0, 'publish', 'forever');
+INSERT INTO `publish_articles` VALUES (4, 0, '2011-01-28 12:09:06', '2011-07-29 12:00:00', 0, 'publish', 'forever');
+INSERT INTO `publish_articles` VALUES (5, 0, '2011-01-28 12:09:54', '2011-07-29 12:00:00', 0, 'publish', 'forever');
+INSERT INTO `publish_articles` VALUES (6, 0, '2011-02-03 03:48:41', '2011-08-04 12:00:00', 0, 'publish', 'forever');
+INSERT INTO `publish_articles` VALUES (7, 0, '2011-02-05 03:29:24', '2011-08-06 12:00:00', 0, 'publish', 'forever');
+INSERT INTO `publish_articles` VALUES (8, 0, '2011-02-05 03:30:32', '2011-08-06 12:00:00', 0, 'publish', 'forever');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `students`
+-- 
+
+CREATE TABLE `students` (
+  `ID` bigint(20) NOT NULL auto_increment,
+  `Name` varchar(100) NOT NULL,
+  `Surname` varchar(100) NOT NULL,
+  `Date_of_birth` date NOT NULL,
+  `Country_1` varchar(80) NOT NULL,
+  `City_1` varchar(80) NOT NULL,
+  `Address_1` varchar(200) NOT NULL,
+  `Country_2` varchar(80) NOT NULL,
+  `City_2` varchar(80) NOT NULL,
+  `Address_2` varchar(200) NOT NULL,
+  `Phone_number_1` varchar(30) NOT NULL,
+  `Phone_number_2` varchar(30) NOT NULL,
+  `Email` varchar(200) NOT NULL,
+  `Married` varchar(50) NOT NULL,
+  `Children` varchar(50) NOT NULL,
+  `High_school_name` varchar(200) NOT NULL,
+  `High_school_place` varchar(150) NOT NULL,
+  `Faculty` varchar(250) NOT NULL,
+  `University` varchar(250) NOT NULL,
+  `Department` varchar(250) NOT NULL,
+  `Number_of_passed_exams` varchar(50) NOT NULL,
+  `Year_of_enrolment` varchar(50) NOT NULL,
+  `Graduation_date` varchar(50) NOT NULL,
+  `Year_of_studies_current` varchar(50) NOT NULL,
+  `Average_grade` varchar(50) NOT NULL,
+  `Number_exams_left_until_graduation` varchar(50) NOT NULL,
+  `PFaculty` varchar(250) NOT NULL,
+  `PUniversity` varchar(250) NOT NULL,
+  `PDepartment` varchar(250) NOT NULL,
+  `PType` varchar(50) NOT NULL,
+  `PName` varchar(250) NOT NULL,
+  `PNumber_of_passed_exams` varchar(50) NOT NULL,
+  `PYear_of_enrolment` varchar(50) NOT NULL,
+  `PGraduation_date` varchar(50) NOT NULL,
+  `PAverage_grade` varchar(50) NOT NULL,
+  `PNumber_exams_left_until_graduation` varchar(50) NOT NULL,
+  `Personal_skils` text NOT NULL,
+  `Intrests` text NOT NULL,
+  `Interships` tinyint(1) NOT NULL,
+  `Jobs` tinyint(1) NOT NULL,
+  `Master` tinyint(1) NOT NULL,
+  `PHD` tinyint(1) NOT NULL,
+  `Research_opportunities` tinyint(1) NOT NULL,
+  `Hobbies` text NOT NULL,
+  `Desired_employment` text NOT NULL,
+  `Availability_for_internship` varchar(50) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `date_of_creation` datetime NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+
+-- 
+-- Dumping data for table `students`
+-- 
+
+INSERT INTO `students` VALUES (1, 'fds', 'fsd', '1989-05-26', 'Bosnia and Herzegovina', '', '', '', '', '', '', '', 'amerme@gmail.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, 0, '', '', '', 'active', '2010-12-24 15:24:30');
+INSERT INTO `students` VALUES (2, 'ewq', 'fds', '0000-00-00', 'Bosnia and Herzegovina', '', '', '', '', '', '', '', 'amerme@gmail.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, 0, '', '', '', 'active', '2010-12-24 15:28:59');
+INSERT INTO `students` VALUES (3, 'ewq', 'sda', '0000-00-00', 'Bosnia and Herzegovina', 'Sarajevo', 'Zmaja od Bosn', 'BiH', '', '', '0387615325445', '', '432@gmail.com', '', '', '32432', 'Sarajevo', 'Elektrotehnicki Fakultet Sarajevo', 'Univerzitet Sarajevo', 'Racunarstvo i informatika', '20', '2', '2012', '2', '7.5', '11', '', '', '', '', '', '', '', '', '', '', '', 'Programming, Web development, Graphic design', 1, 0, 1, 0, 1, '3D modeling', '', '', 'active', '2010-12-24 15:34:07');
+INSERT INTO `students` VALUES (4, 'eqw', 'das', '0000-00-00', 'Bosnia and Herzegovina', '', '', '', '', '', '', '', 'amerme@gmail.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, 0, '', '', '', 'active', '2010-12-24 15:36:14');
+INSERT INTO `students` VALUES (5, 'da', 'dsa', '0000-00-00', 'Bosnia and Herzegovina', '', '', '', '', '', '', '', 'amerme@gmail.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, 0, '', '', '', 'active', '2010-12-24 15:38:37');
+INSERT INTO `students` VALUES (6, 'dsa', 'dsa', '0000-00-00', 'Bosnia and Herzegovina', '', '', '', '', '', '', '', 'mirza@gmail.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, 0, '', '', '', '', '2011-02-15 14:34:15');
+INSERT INTO `students` VALUES (7, 'Hamus', 'Hamus', '0000-00-00', 'Bosnia and Herzegovina', '', '', '', '', '', '', '', 'hamus@gamil.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, 0, '', '', '', '', '2011-02-15 14:41:35');
+INSERT INTO `students` VALUES (8, 'Hrkljus', 'Hrkljus', '0000-00-00', 'Bosnia and Herzegovina', '', '', '', '', '', '', '', 'hrkljus@gmail.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, 0, '', '', '', '', '2011-02-15 14:44:56');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `universitys`
+-- 
+
+CREATE TABLE `universitys` (
+  `ID` int(11) NOT NULL auto_increment,
+  `Logo` varchar(200) NOT NULL,
+  `Name_of_University` varchar(200) NOT NULL,
+  `Name_of_Faculty` varchar(200) NOT NULL,
+  `Address` varchar(200) NOT NULL,
+  `City` varchar(200) NOT NULL,
+  `ZIP_code` varchar(50) NOT NULL,
+  `Country` varchar(200) NOT NULL,
+  `Contact_person` varchar(200) NOT NULL,
+  `Phone_number` varchar(50) NOT NULL,
+  `Fax` varchar(50) NOT NULL,
+  `Web` varchar(200) NOT NULL,
+  `Email` varchar(150) NOT NULL,
+  `Facebook` varchar(150) NOT NULL,
+  `Twitter` varchar(150) NOT NULL,
+  `Other` varchar(150) NOT NULL,
+  `Number_of_students` varchar(50) NOT NULL,
+  `About_University` text NOT NULL,
+  `About_Faculty` text NOT NULL,
+  `Username` varchar(100) NOT NULL,
+  `Password` varchar(150) NOT NULL,
+  `Login_email` varchar(150) NOT NULL,
+  `Date_of_exire` datetime NOT NULL,
+  `date_of_creation` datetime NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+-- 
+-- Dumping data for table `universitys`
+-- 
+
+INSERT INTO `universitys` VALUES (1, '', 'Univerzitet u Sarajevu', 'Elektrotehnicki Fakultet Sarajevo', 'Zmaja od Bosne 20', 'Sarajevo', '71000', 'Bosnia and Herzegovina', 'Etf Etf', '+387 33 123 456', '+387 33 123 457', 'www.etf.unsa.ba', 'etf@etf.unsa.ba', 'facebook.com/etf', 'twitter.com/etf', '', 'aprox. 1500', 'About', 'About1', 'etf', 'b72792e2b714688f0af5e10041c18e3e', 'etf@etf.ba', '0000-00-00 00:00:00', '2011-02-02 18:37:56');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `university_study`
+-- 
+
+CREATE TABLE `university_study` (
+  `ID` int(11) NOT NULL auto_increment,
+  `type1` varchar(50) NOT NULL,
+  `Bachelor` tinyint(1) NOT NULL,
+  `Master1` tinyint(1) NOT NULL,
+  `Research` tinyint(1) NOT NULL,
+  `Taught` tinyint(1) NOT NULL,
+  `PhD` tinyint(1) NOT NULL,
+  `Academic_PhD` tinyint(1) NOT NULL,
+  `Professional_doctorate` tinyint(1) NOT NULL,
+  `Predefined_PhD_project` tinyint(1) NOT NULL,
+  `Open_PhD_programme` tinyint(1) NOT NULL,
+  `Both1` tinyint(1) NOT NULL,
+  `Number_of_places` varchar(500) NOT NULL,
+  `Department` varchar(500) NOT NULL,
+  `Maximum_duration` tinyint(1) NOT NULL,
+  `Winter` tinyint(1) NOT NULL,
+  `Summer` tinyint(1) NOT NULL,
+  `Years` varchar(200) NOT NULL,
+  `English` tinyint(1) NOT NULL,
+  `German` tinyint(1) NOT NULL,
+  `Franch` tinyint(1) NOT NULL,
+  `Spanish` tinyint(1) NOT NULL,
+  `Italian` tinyint(1) NOT NULL,
+  `Other` varchar(150) NOT NULL,
+  `Topic` varchar(500) NOT NULL,
+  `Required_average_grade` varchar(200) NOT NULL,
+  `Out_of` varchar(200) NOT NULL,
+  `Scjolarship` tinyint(1) NOT NULL,
+  `Full_funding_provided` tinyint(1) NOT NULL,
+  `Partially_funding_provided` tinyint(1) NOT NULL,
+  `Contact_person` tinyint(1) NOT NULL,
+  `Name_and_surname` varchar(200) NOT NULL,
+  `CDepartment` varchar(200) NOT NULL,
+  `Email` varchar(200) NOT NULL,
+  `Telephone` varchar(50) NOT NULL,
+  `Day1` tinyint(4) NOT NULL,
+  `Month1` tinyint(4) NOT NULL,
+  `Year1` smallint(6) NOT NULL,
+  `date_of_creation` datetime NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+-- 
+-- Dumping data for table `university_study`
+-- 
+
+INSERT INTO `university_study` VALUES (1, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '100', 'SF', 0, 0, 0, '2 maximum', 0, 0, 0, 0, 0, '', '', '8.5', 'Biology', 0, 0, 0, 0, 'AA', 'AA', 'AA', 'AA', 30, 5, 2011, '2011-02-03 15:50:12');
+INSERT INTO `university_study` VALUES (2, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'wq', 'ewq', 0, 0, 0, 'ewq', 0, 0, 0, 0, 0, 'ewq', 'rew', 'tre', 'tre', 0, 0, 0, 0, 'q', 'q', 'q', 'q', 1, 1, 2011, '2011-02-05 15:29:58');
+INSERT INTO `university_study` VALUES (3, '', 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 'ewqewqweq', 'weq', 1, 1, 1, 'ewq', 1, 1, 1, 1, 1, 'ewq', 'ewqewq', 'ewq', 'ewq', 1, 0, 0, 1, 'q', 'q', 'q', 'q', 3, 4, 2011, '2011-02-05 15:30:58');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `users`
+-- 
+
+CREATE TABLE `users` (
+  `ID` bigint(20) NOT NULL auto_increment,
+  `Name` varchar(100) NOT NULL,
+  `Surname` varchar(100) NOT NULL,
+  `City` varchar(80) NOT NULL,
+  `Country` varchar(80) NOT NULL,
+  `Date_of_birth` date NOT NULL,
+  `Email` varchar(200) NOT NULL,
+  `Username` varchar(50) NOT NULL,
+  `Password` varchar(60) NOT NULL,
+  `Eestec` tinyint(1) NOT NULL,
+  `Photo` varchar(400) NOT NULL,
+  `Status` varchar(50) NOT NULL,
+  `date_of_creation` datetime NOT NULL,
+  `CV` bigint(20) NOT NULL,
+  `Last_login` datetime NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+
+-- 
+-- Dumping data for table `users`
+-- 
+
+INSERT INTO `users` VALUES (3, 'fsddas', 'fds', 'Sarajevo', 'Bosnia and Herzegovina', '0000-00-00', 'rew@gmail.com', 'rete', 'fcea920f7412b5da7be0cf42b8c93759', 0, '', 'active', '2010-12-24 15:38:37', 5, '2010-12-24 15:38:37');
+INSERT INTO `users` VALUES (4, 'dasdsa', 'ewq', 'Sarajevo', 'Bosnia and Herzegovina', '0000-00-00', 'fdsa@gmail.com', 'eqw', 'fcea920f7412b5da7be0cf42b8c93759', 0, '', 'active', '2011-02-15 14:34:15', 6, '2011-02-15 14:34:15');
+INSERT INTO `users` VALUES (6, 'Hamus', 'Hamus', 'Sarajevo', 'Bosnia and Herzegovina', '0000-00-00', 'hamus@gamil.com', 'hamus', 'fcea920f7412b5da7be0cf42b8c93759', 0, '', 'active', '2011-02-15 14:41:35', 7, '2011-02-15 14:41:35');
+INSERT INTO `users` VALUES (7, 'Hamus', 'Hamus', 'Sarajevo', 'Bosnia and Herzegovina', '0000-00-00', 'hamus@gamil.com', 'hamus', 'fcea920f7412b5da7be0cf42b8c93759', 0, '', 'active', '2011-02-15 14:41:35', 7, '2011-02-15 14:41:35');
+INSERT INTO `users` VALUES (8, 'Hrkljus', 'Hrkljus', 'Sarajevo', 'Bosnia and Herzegovina', '0000-00-00', 'hrkljus@gmail.com', 'hrkljus', 'fcea920f7412b5da7be0cf42b8c93759', 1, 'img/thumbs/img4d618d69e5e33.jpg', 'active', '2011-02-15 14:44:56', 8, '2011-02-15 14:44:56');

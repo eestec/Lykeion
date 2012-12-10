@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="favicon.ico" rel="shortcut icon">
+<title>Lykeion - A place where students, companies and universities can directly reach each other</title>
+<link type="text/css" rel="stylesheet" href="css/styles.css">
+<script type="text/javascript" src="js/jquery1.4.2.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+</head>
+
+<body>
+
+<div id="container">
+
+	<div id="header">
+		<h1><a href="#"><img src="images/logo.png" alt="Lykeion"/></a></h1>
+		<form id="search" action="#" method="post">
+			<input type="text" class="textBox" placeholder="Type your search here..."/>
+		</form>
+		<div id="logged-in-bar">
+			<img src="images/default-avatar-small.jpg" alt="User picture small" />
+			<b>Marko Lazic</b>
+			<a href="index.html">Logout</a>
+		</div>
+	</div>
+	
+		
+	<div id="nav">
+		<ul>
+			<li class="active"><a href="#">Home</a></li>
+			<li><a href="#">What is EESTEC</a></li>
+			<li><a href="#">Students</a></li>
+			<li><a href="#">Companies</a></li>
+			<li><a href="#">Universities</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</div>
+
+	
+	<div id="profile-box">
+			<div id="left-column-students">
+	                    <img class="avatar" alt="avatar" src="images/default-avatar.jpg"/>
+	                    <h2>Marko Lazic</h2>
+	                    <h6>Belgrade</h6>
+	                    <h6>Serbia</h6>
+	                    <h6>marko.lazic88@gmail.com</h6>
+	                    <h6>October 13th 1988</h6>
+						<div id="icons">
+							<a target="_blank" title="Export your CV to Europass XML file" href="work.php?format=XML"><img src="images/xml-icon.png"></a>
+							<a target="_blank" title="Export your CV to PDF document" href="work.php?format=PDF"><img src="images/pdf-icon.png"></a>
+							<span class="separator"><img src="images/separator-profile-box.png"/></span>
+							<a href="feedback.php"><img src="images/mail-icon.png"></a>
+						</div>
+            </div>
+			<div id="center-column-messages">
+				<div id="latest-messages">
+				</div>
+				<div id="favorites">
+				</div>
+			</div>
+			<div id="right-column-buttons">
+			<a href="#">Inbox</a>
+			<a href="#">My Curriculum Vitae</a>
+			<a href="#">Edit profile</a>
+			<a href="#">Display Favorites</a>
+			</div>
+	</div>
+	
+	<div id="menu">
+		<ul>
+			<li class="active"><a href="#">All Articles</a></li>
+			<li><a href="#">Study Programs</a></li>
+			<li><a href="#">Jobs and Internships</a></span></li>
+			<li><a href="#">Researches</a></li>
+			<li><a href="#">Companies</a></li>
+			<li><a href="#">Universities</a></li>
+		</ul>
+		<div id="find-us-on">
+			<h6>Find us on:</h6> 
+			<a class="icon" href="http://www.facebook.com/lykeion.eestec"><img src="images/facebook-logo.png"/></a>
+			<a class="icon"  href="#"><img src="images/twitter-logo.png"/></a>
+			<a class="icon" href="#"><img src="images/google-plus-logo.png"/></a>
+		</div>
+		<div class="print"><a href="#"><img class="icon" src="images/print-icon.png"/></a></div>
+	</div>
+	
+	<div id="shadow-up"></div>
+	
+	<div id="content">
+		<div id="edit-cv-container">
+			<h2>Edit your Curriculum Vitae</h2>
+			<a class="import-europass" href="#">Import your europass CV</a>
+		<ul>
+			<li class="active first"><a href="#">Personal information</a></li>
+			<li><a href="#">Work experience</a></li>
+			<li><a href="#">Education</a></span></li>
+			<li class="last"><a href="#">Other skills</a></li>
+		</ul>
+		<form id="edit-cv-form">
+			<label>Name</label>
+			<input type="text" name="name" />
+			<label>Surname</label>
+			<input type="text" name="surname" />
+			<label>Country</label>
+			<input type="text" name="country" />
+			<label>City</label>
+			<input type="text" name="city" />
+			<label>Address</label>
+			<input type="text" name="address" />
+			<label>Phone number</label>
+			<input type="text" name="phone" />
+			<label>E-mail</label>
+			<input type="text" name="mail" />
+			<label>Nationality</label>
+			<input type="text" name="nationality" />
+			<label>Date of birth</label>
+			<input type="text" name="dateofbirth" />
+			<label>Fax</label>
+			<input type="text" name="fax" />
+			<label>Gender</label>
+			<select name="stud_cv_Gender">
+				<option>M</option>
+				<option>F</option>
+			</select>
+			<label>Desired employment</label>
+			<input type="text" name="desiredemployment" />
+
+			<input class="btn" type="image" src="images/edit-cv-save-btn.png"/>
+			
+			<div class="warning phone-warning">Also input your country code at the beggining</div>
+			<div class="error mail-error">You have typed an invalid e-mail address!</div>
+		</form>
+
+		</div>
+	</div>
+
+	
+	<div id="shadow-down"></div>
+	
+</div>
+
+<div id="footer">
+	<div id="footerContainer">
+		<div id="footer-top">
+		<a href="http://www.eestec.net"><img src="images/eestec-logo.png" alt="EESTEC"/></a>
+		<p><b>EESTEC International</b><br/>Power your future<br/>Electrical Engineering STudents' European assoCiation</p>
+		<p>Mekelweg 4,<br/>2628 CD Delft,<br/>www.eestec.net<br/>The Netherlands</p>
+		</div>
+		<div id="footer-line"></div>
+		<div id="footer-bottom">
+		<a href="#"><img src="images/logo-footer.png" alt="Lykeion"/></a>
+		<p><b>EESTEC Lykeion Portal</b></p>
+		<div class="terms"><a href="#">Terms of use</a> | <a href="#">Branding & Authorship</a> | <a href="#">Contact</a></div>
+		</div>
+		<div id="footer-menu">
+			<div class="menu">
+				<a href="#">Home</a>  |  <a href="#">What is EESTEC</a>  |  <a href="#">Students</a>  |  <a href="#">Companies</a>  |  <a href="#">Universities</a>  |  <a href="#">Contacts</a>
+			</div>
+			<div class="copyright">Copyright &copy; 2012 EESTEC All rights reserved.</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

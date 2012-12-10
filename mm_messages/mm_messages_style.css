@@ -1,0 +1,114 @@
+@charset "utf-8";
+@import url(fonts.css);
+
+a {text-decoration: none;}
+a img {border: none;}
+a:link, a:visited {color: #424242;}
+html body a:hover {color: #424242;}
+#masthead a, #ish a, #navbar a, #banners a, a.button, #main h1 a, .title a:link, .title a:visited, .byline a:link, .byline a:visited {}
+#main h1 a:hover, .title a:hover, .byline a:hover {}
+
+#messages_conversation_history{
+	width:100%;
+	
+}
+#messages_subject{
+	width:95%;
+	font-family:Tahoma;
+	font-size:14px;
+	font-weight:bold;
+}
+#messages_conversation_to_list{
+	width:95%;
+	font-family:Tahoma;
+	font-size:11px;
+	padding:2px;
+}
+#messages_conversation_msg_container{
+	width:95%;
+}
+#messages_conversation_msg_body{
+	margin-top:5px;
+	margin-bottom:2px;
+	border-bottom:1px dotted #888888;
+	font-family:Tahoma;
+	font-size:12px;
+}
+#messages_conversation_msg_body_date{
+	width:100%;
+	font-size:11px;
+	margin-bottom:2px;
+}
+#messages_conversation_msg_body_headline{
+	width:100%;
+	font-weight:bold;
+        font-size:14px;
+}
+#messages_conversation_msg_body_text{
+	width:100%;
+	margin:5px;
+        
+}
+#messages_all_list{
+	width:95%;
+}
+#messages_preview_container{
+	width:100%;
+	font-family:Tahoma;
+	font-size:12px;
+	margin:2px;
+	border-bottom:1px solid #888888;
+	border-top:1px solid #888888;
+}
+#messages_preview_container_unreaded{
+	width:100%;
+	font-family:Tahoma;
+	font-size:12px;
+	margin:2px;
+	border-bottom:1px solid #888888;
+	border-top:1px solid #888888;
+	background-color:#CCCCCC;
+}
+
+#messages_preview_subject{
+	width:100%;
+	font-size:13px;
+}
+#messages_preview_autor{
+	width:100%;
+	font-size:12px;
+	font-weight:bold;
+}
+#messages_preview_msg{
+	width:100%;
+}
+#messages_preview_other{
+	width:100%;
+	font-size:10px;
+	color:#888888;
+}
+#messages_add_msg{
+	width:95%;
+	font-family:Tahoma;
+	font-size:12px;
+}
+#messages_add_msg_to{
+	width:100%;
+	font-size:10px;
+	margin:2px;
+}
+#messages_add_msg_subject{
+	width:100%;
+	font-weight:bold;
+	margin-left:2px;
+}
+#messages_add_msg_text{
+	width:100%;
+	margin:2px;
+}
+#messages_add_msg_send{
+	width:100%;
+}
+
+
+

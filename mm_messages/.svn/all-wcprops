@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/lykeion/!svn/ver/29/trunk/Lykeion/mm_messages
+END
+mm_messages_style.css
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/lykeion/!svn/ver/6/trunk/Lykeion/mm_messages/mm_messages_style.css
+END
+language.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/lykeion/!svn/ver/3/trunk/Lykeion/mm_messages/language.php
+END
+database.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/lykeion/!svn/ver/29/trunk/Lykeion/mm_messages/database.php
+END
+messages.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/lykeion/!svn/ver/28/trunk/Lykeion/mm_messages/messages.php
+END
+config.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/lykeion/!svn/ver/3/trunk/Lykeion/mm_messages/config.php
+END
