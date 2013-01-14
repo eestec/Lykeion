@@ -850,75 +850,75 @@ class frontend{
 	public function cv_search(){
             if($_SESSION['rank']=='company' && $_SESSION['visible']==0) echo '<div id="wall_article_cv">You don not have privileges to browse students.</div>';
             else{
-	 echo'<h3>Search Students</h3>
+	 echo'<center><h2>Search Students</h2></center>
 		<form action="index.php" method="post" enctype="multipart/form-data" name="form" id="form" class="studentform">
 	 
-		      <center><h3>Basic information</h3></center><br><br>
+		      <center><h3>Basic information</h3></center>
                        
-		        <label><input type="checkbox" name="cm_search_username_ch" value="1" id="cm_search_username_ch" />
-		        By Username</label>
+		        <label>By Username<input type="checkbox" name="cm_search_username_ch" value="1" id="cm_search_username_ch" />
+		        </label>
 		        <input name="cv_search_username" type="text" id="cv_search_username"   />
 		      
-		        <label><input type="checkbox" name="cm_search_name_ch" value="1" id="cm_search_name_ch" />
-		        By Name and Surname</label>
+		        <label>By Name and Surname<input type="checkbox" name="cm_search_name_ch" value="1" id="cm_search_name_ch" />
+		        </label>
 		        <input name="cv_search_name" type="text" id="cv_search_name"   />
 		      
-		        <label><input type="checkbox" name="cm_search_city_ch" value="1" id="cm_search_city_ch" />
-		        By City</label>
+		        <label>By City<input type="checkbox" name="cm_search_city_ch" value="1" id="cm_search_city_ch" />
+		        </label>
 		        <input name="cv_search_city" type="text" id="cv_search_city" size="36" maxlength="200"  />
 		      
-		        <label><input type="checkbox" name="cm_search_country_ch" value="1" id="cm_search_country_ch" />
-				By Country</label>
+		        <label>By Country<input type="checkbox" name="cm_search_country_ch" value="1" id="cm_search_country_ch" />
+				</label>
 		        <input name="cv_search_country" type="text" id="cv_search_country"   /><br>
 		     
                       <center><h3>Education</h3></center>
 		      
-		        <label><input type="checkbox" name="cm_search_title" value="1" id="cm_search_title" />
-				By Title of qualification awarded</label>
-		        <input name="cv_search_title" type="text" id="cv_search_title"   /><br><br><br>
+		        <label>By Title of qualification awarded<input type="checkbox" name="cm_search_title" value="1" id="cm_search_title" />
+				</label>
+		        <input name="cv_search_title" type="text" id="cv_search_title"   /><br>
 		      
-		        <label><input type="checkbox" name="cm_search_name_of_organisation" value="1" id="cm_search_name_of_organisation" />
-				By Name and type of organisation providing education and training</label>
-		        <input name="cv_search_name_of_organisation" type="text" id="cv_search_name_of_organisation"  /><br><br><br><br>
+		        <label>By Organisation providing education<input type="checkbox" name="cm_search_name_of_organisation" value="1" id="cm_search_name_of_organisation" />
+				</label>
+		        <input name="cv_search_name_of_organisation" type="text" id="cv_search_name_of_organisation"  /><br>
 		     
-		        <label><input type="checkbox" name="cm_search_education_field" value="1" id="cm_search_education_field" />
-				By education field</label>
+		        <label>By education field<input type="checkbox" name="cm_search_education_field" value="1" id="cm_search_education_field" />
+				</label>
 		        <input name="cv_search_education_field" type="text" id="cv_search_education_field" >
 		      
                       <center><h3>Work experience</h3></center>
                      
-		        <label><input type="checkbox" name="cm_search_occupation" value="1" id="cm_search_occupation" />
-				By Occupation or position held</label>
-		        <input name="cv_search_occupation" type="text" id="cv_search_occupation" ><br><br><br>
+		        <label>By Occupation or position held<input type="checkbox" name="cm_search_occupation" value="1" id="cm_search_occupation" />
+				</label>
+		        <input name="cv_search_occupation" type="text" id="cv_search_occupation" ><br>
 		      
-		        <label><input type="checkbox" name="cm_search_responsibilities" value="1" id="cm_search_responsibilities" />
-				By Main activities and responsibilities</label>
-		        <input name="cv_search_responsibilities" type="text" id="cv_search_responsibilities" ><br><br><br>
+		        <label>By Main activities and responsibilities<input type="checkbox" name="cm_search_responsibilities" value="1" id="cm_search_responsibilities" />
+				</label>
+		        <input name="cv_search_responsibilities" type="text" id="cv_search_responsibilities" ><br>
 		      
-		        <label><input type="checkbox" name="cm_search_name_address" value="1" id="cm_search_name_address" />
-				By Name of employer</label>
+		        <label>By Name of employer<input type="checkbox" name="cm_search_name_address" value="1" id="cm_search_name_address" />
+				</label>
 		        <input name="cv_search_name_address" type="text" id="cv_search_name_address" >
 		      
                       <center><h3>Personal skills and competences</h3></center>
                       
-		        <label><input type="checkbox" name="cm_search_social_skills" value="1" id="cm_search_social_skills" />
-				By Social skills and competences</label>
-		        <input name="cv_search_social_skills" type="text" id="cv_search_social_skills" ><br><br><br>
+		        <label>By Social skills and competences<input type="checkbox" name="cm_search_social_skills" value="1" id="cm_search_social_skills" />
+				</label>
+		        <input name="cv_search_social_skills" type="text" id="cv_search_social_skills" ><br>
 		      
-		        <label><input type="checkbox" name="cm_search_organisational_skills" value="1" id="cm_search_organisational_skills" />
-				By Organisational skills and competences</label>
-		        <input name="cv_search_organisational_skills" type="text" id="cv_search_organisational_skills" ><br><br><br>
+		        <label>By Organisational skills and competences<input type="checkbox" name="cm_search_organisational_skills" value="1" id="cm_search_organisational_skills" />
+				</label>
+		        <input name="cv_search_organisational_skills" type="text" id="cv_search_organisational_skills" ><br>
 		      
-		        <label><input type="checkbox" name="cm_search_technical_skills" value="1" id="cm_search_technical_skills" />
-				By Technical skills and competences</label>
-		        <input name="cv_search_technical_skills" type="text" id="cv_search_technical_skills"   /><br><br><br>
+		        <label>By Technical skills and competences<input type="checkbox" name="cm_search_technical_skills" value="1" id="cm_search_technical_skills" />
+				</label>
+		        <input name="cv_search_technical_skills" type="text" id="cv_search_technical_skills"   /><br>
 		      
-		        <label><input type="checkbox" name="cm_search_other_skills" value="1" id="cm_search_other_skills" />
-				By Other skills and competences</label>
-		        <input name="cv_search_other_skills" type="text" id="cv_search_other_skills"  /><br><br><br>
+		        <label>By Other skills and competences<input type="checkbox" name="cm_search_other_skills" value="1" id="cm_search_other_skills" />
+				</label>
+		        <input name="cv_search_other_skills" type="text" id="cv_search_other_skills"  /><br>
 		      
-		        <label><input type="checkbox" name="cm_search_annexes" value="1" id="cm_search_annexes" />
-				By Annexes</label>
+		        <label>By Annexes<input type="checkbox" name="cm_search_annexes" value="1" id="cm_search_annexes" />
+				</label>
 		        <input name="cv_search_annexes" type="text" id="cv_search_annexes" size="36" maxlength="200"  />
 		      <br><br>
                       <input class="search-btn" type="submit" name="cv_search_students" value="Search"/><br>
