@@ -24,19 +24,19 @@ while($row=  mysql_fetch_array($r)){
 $s="SELECT count( * ) as broj FROM articles  WHERE jobtype!='-1' and Status='Active'";
 $r=mysql_query($s);
 while($row=  mysql_fetch_array($r)){
-	echo "<h6><div class=\"stattitle\">Jobs:</div>".$row['broj']."</h6>";
+	echo "<h6><div class=\"stattitle\"><a href='http://lykeion.eestec.net/index.php?do=preview&wt=job'>Jobs:</a></div>".$row['broj']."</h6>";
 }
 
 $s="SELECT count( * ) as broj FROM articles  WHERE scolarship!='-1' and Status='Active'";
 $r=mysql_query($s);
 while($row=  mysql_fetch_array($r)){
-	echo "<h6><div class=\"stattitle\">Scholarships:</div>".$row['broj']."</h6>";
+	echo "<h6><div class=\"stattitle\"><a href='http://lykeion.eestec.net/index.php?do=preview&wt=study'>Scholarships:</a></div>".$row['broj']."</h6>";
 }
 
 $s="SELECT count( * ) as broj FROM articles  WHERE Status='Active'";
 $r=mysql_query($s);
 while($row=  mysql_fetch_array($r)){
-	echo "<h6><div class=\"stattitle\">Articles:</div>".$row['broj']."</h6>";
+	echo "<h6><div class=\"stattitle\"><a href='http://lykeion.eestec.net/index.php?do=preview'>Articles:</a></div>".$row['broj']."</h6>";
 }
 
 ?>
