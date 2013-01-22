@@ -510,7 +510,7 @@ class Students_cv{
                     for($j=2020;$j>=1980;$j--) echo '<option>'.$j.'</option>';
                     echo '</select><br><label>To:</label><select name="tday'.$i.'"><option>'.$this->tday[$i].'</option><option>-></option>';
                     for($j=1;$j<=31;$j++) echo '<option>'.$j.'</option>';
-                    echo '</select> <select name="tmonth'.$i.'"><option>'.$this->tmonth[$i].'</option><option>-></option>';
+                    echo '</select><select name="tmonth'.$i.'"><option>'.$this->tmonth[$i].'</option><option>-></option>';
                     for($j=1;$j<=12;$j++) echo '<option>'.$j.'</option>';
                     echo '</select><select name="tyear'.$i.'"><option>'.$this->tyear[$i].'</option><option>-></option>';
                     for($j=2020;$j>=1980;$j--) echo '<option>'.$j.'</option>';

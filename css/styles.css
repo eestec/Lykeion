@@ -886,8 +886,8 @@ border-bottom-right-radius: 5px;
 
 
 .studentform {
-width: 540px;
-margin-top:40px;
+width: 440px;
+margin-top:65px;
 margin-left: auto;
 margin-right: auto;
 }
@@ -896,12 +896,12 @@ margin-right: auto;
 display: block;
 font-size: 12px;
 color: #212121;
-width: 270px;
+width: 170px;
 float: left;
 text-align: right;
 padding-right:20px;
-line-height: 20px;
-vertical-align: top;
+line-height: 24px;
+//vertical-align: top;
 
 }
 
@@ -911,7 +911,6 @@ font-size: 12px;
 color: #000;
 height: 20px;
 margin-bottom: 10px;
-margin-left: 10px;
 border: 1px solid #e3e3e3;
 border-radius: 5px;
 background: #f0f0f0;
@@ -922,7 +921,7 @@ background: #f0f0f0;
 display:inline;
 font-size: 12px;
 color: #000;
-width: 50px;
+width: 55px;
 height: 20px;
 margin-bottom: 10px;
 border: 1px solid #e3e3e3;
@@ -973,9 +972,9 @@ line-height: 25px;
 padding-left: 20px;
  }
 
-#studentform textarea {
-margin-bottom: 10px;
-width: 320px;
+.studentform textarea {
+margin: 0px 10px 10px 10px;
+max-width: 450px;
 }
 
 .studentform input[type=text] {
@@ -1016,6 +1015,209 @@ width: 231px;
 /* end of ************** "Edit your Curriculum Vitae" page ****************** */
 
 
+/* **************************Search student CV page **************************** */
+
+.searchcvform {
+width: 540px;
+margin-top:40px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.searchcvform label {
+display: block;
+font-size: 12px;
+color: #212121;
+width: 270px;
+float: left;
+text-align: right;
+padding-right:20px;
+line-height: 20px;
+vertical-align: top;
+
+}
+
+.searchcvform input {
+display:inline;
+font-size: 12px;
+color: #000;
+height: 20px;
+margin-bottom: 10px;
+margin-left: 10px;
+border: 1px solid #e3e3e3;
+border-radius: 5px;
+background: #f0f0f0;
+
+}
+
+.searchcvform select {
+display:inline;
+font-size: 12px;
+color: #000;
+width: 50px;
+height: 20px;
+margin-bottom: 10px;
+border: 1px solid #e3e3e3;
+border-radius: 5px;
+background: #f0f0f0;
+margin-right:6px;
+}
+
+.searchcvform h3 {
+padding-bottom: 12px;
+}
+
+.searchcvform  .btn {
+  width: 59px;
+  height: 31px;
+  border: none;
+  margin: 70px 0px 60px 191px;
+background: url("../images/edit-cv-save-btn.png");
+  cursor: pointer;
+  }
+  
+.searchcvform   .search-btn {
+display: block;
+background: url("../images/edit-cv-btn-bg.png") repeat-x;
+height: 31px;
+width: 70px;
+text-decoration: none;
+text-align: center;
+font-weight: bold;
+color: #696969;
+font-size: 11px;
+line-height: 31px;
+padding-left:4px;
+padding-right:4px;
+margin-left: auto;
+margin-right: auto;
+}
+
+#edit-cv-form .warning {
+position: absolute;
+width: 296px;
+height: 25px;
+background: url("../images/edit-cv-warning.png") no-repeat;
+left: 445px;
+font-size: 12px;
+color: #212121;
+line-height: 25px;
+padding-left: 20px;
+ }
+
+.searchcvform textarea {
+margin-bottom: 10px;
+width: 320px;
+}
+
+.searchcvform input[type=text] {
+width: 213px;
+}
+#searchcvform input[type=password] {
+width: 213px;
+}
+#searchcvform input[type=number] {
+width: 50px;
+margin-left:13px;
+}
+/* *********** End of Search student CV page *************************** */
+
+/* *********** Add/Edit Articles page **********************************/
+
+.addarticlesform {
+width: 620px;
+margin-top:30px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.addarticlesform label {
+display: block;
+font-size: 14px;
+color: #212121;
+width: 170px;
+text-align: left;
+padding-right:20px;
+padding-top: 10px;
+line-height: 24px;
+}
+
+.addarticlesform input {
+display:inline;
+font-size: 12px;
+color: #000;
+height: 20px;
+margin-bottom: 2px;
+margin-right:2px;
+border: 1px solid #e3e3e3;
+border-radius: 5px;
+background: #f0f0f0;
+vertical-align:top;
+
+}
+
+.addarticlesform select {
+display:inline;
+font-size: 12px;
+color: #000;
+width: 70px;
+height: 20px;
+margin-bottom: 10px;
+border: 1px solid #e3e3e3;
+border-radius: 5px;
+background: #f0f0f0;
+margin-right:6px;
+}
+
+.addarticlesform h3 {
+padding-top: 20px;
+padding-bottom: 2px;
+}
+
+.addarticlesform  .btn {
+  width: 59px;
+  height: 31px;
+  border: none;
+  margin: 70px 0px 60px 191px;
+background: url("../images/edit-cv-save-btn.png");
+  cursor: pointer;
+  }
+  
+.addarticlesform   .search-btn {
+display: block;
+background: url("../images/edit-cv-btn-bg.png") repeat-x;
+height: 31px;
+width: 70px;
+text-decoration: none;
+text-align: center;
+font-weight: bold;
+color: #696969;
+font-size: 11px;
+line-height: 31px;
+padding-left:4px;
+padding-right:4px;
+margin-left: auto;
+margin-right: auto;
+}
+
+#edit-cv-form .warning {
+position: absolute;
+width: 296px;
+height: 25px;
+background: url("../images/edit-cv-warning.png") no-repeat;
+left: 445px;
+font-size: 12px;
+color: #212121;
+line-height: 25px;
+padding-left: 20px;
+ }
+
+
+.addarticlesform input[type=text] {
+width: 213px;
+}
+
+/* ************* End of Add/Edit Articles page *************************/
 
 /* ************ simple text pages like Contact, Terms of use ... *********************/
 

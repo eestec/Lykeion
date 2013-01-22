@@ -57,7 +57,7 @@ class password_change {
 	}	
 	
 	public function show_password_change_form(){
-		echo('<div class="article"><form action="index.php" method="post" enctype="multipart/form-data" name="passwordchangeform" id="passwordchangeform" class="studentform">
+		echo('<div class="article"><form action="index.php" method="post" enctype="multipart/form-data" name="passwordchangeform" id="passwordchangeform" class="searchcvform">
 		
 	        <label>Old password:</label><input name="old_password"  type="password" id="old_password"  />
 			<label>New password:</label><input name="new_password" class="lykeion_textbox" type="password" id="new_password"  />

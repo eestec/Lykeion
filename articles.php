@@ -177,9 +177,9 @@ class articles {
 		//$this->mtg->load_metatags($this->metatags);
 		$this->jobtype->load_jobtype($this->jobtype_id);
 		$this->scolarship->load_universitystudy($this->scolarship_id);
-		echo ('<form action="index.php" method="post" enctype="multipart/form-data" name="form_article" id="form_article" class="studentform">
+		echo ('<form action="index.php" method="post" enctype="multipart/form-data" name="form_article" id="form_article" class="addarticlesform">
 		
-		  <h2>Article Manager: Add Article </h2>  
+		  <h2>Article Manager: Add Article</h2>  
 		 
 		        <label><strong>Title</strong></label>
 		          <input name="article_type" type="hidden"  id="article_type" value="'.$typ.'">
@@ -303,7 +303,7 @@ class articles {
 		//$this->mtg->load_metatags($this->metatags);
 		$this->jobtype->load_jobtype($this->jobtype_id);
 		$this->scolarship->load_universitystudy($this->scolarship_id); 
-		echo ('<form action="index.php" method="post" enctype="multipart/form-data" name="form" id="form" class="studentform">
+		echo ('<form action="index.php" method="post" enctype="multipart/form-data" name="form" id="form" class="addarticlesform">
 		
 		  <h3>Article Manager: Edit Article </h3>  
 		        <label>Title</label>

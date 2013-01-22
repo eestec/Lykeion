@@ -851,7 +851,7 @@ class frontend{
             if($_SESSION['rank']=='company' && $_SESSION['visible']==0) echo '<div id="wall_article_cv">You don not have privileges to browse students.</div>';
             else{
 	 echo'<center><h2>Search Students</h2></center>
-		<form action="index.php" method="post" enctype="multipart/form-data" name="form" id="form" class="studentform">
+		<form action="index.php" method="post" enctype="multipart/form-data" name="form" id="form" class="searchcvform">
 	 
 		      <center><h3>Basic information</h3></center>
                        
