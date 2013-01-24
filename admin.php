@@ -39,7 +39,7 @@ if(@$_SESSION['loged']=='true' && @$_SESSION['admin']=="true"){
                 require_once 'mail.php';
                 $mail=new mail();
                 $id=0;
-                $mailtext="<html><body>".$mailtext."
+                $mailtext="<html><body>".stripslashes($mailtext)."
 <br><br><p>Best Regards,</p>
                                 <p>Lykeion website team</p
                                 <img src='http://lykeion.eestec.net/images/lykeion-banner-v2.gif' width='300'>

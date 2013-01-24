@@ -530,7 +530,7 @@ class frontend{
 						echo '<h3>'.$podaci['Name_of_Faculty'].'</h3><br><p>Address: '.$podaci['Address'].'<br>City: '.$podaci['City'].'<br>Country: '.$podaci['Country'].'<br>Contact person: '.$podaci['Contact_person'].'<br>Phone: '.$podaci['Phone_number'].'<br>Website: <a href="http://'.$podaci['Web'].'">link</a><br>Email: '.$podaci['Email'].'<br>';
                                                    if($podaci['Facebook']!="") echo '<a href="'.$podaci['Facebook'].'"><img src="images/fb.png" width="30"></a>';
                                                    if($podaci['Twitter']!="") echo '<a href="'.$podaci['Twitter'].'"><img src="images/tw.png" width="30"></a>';
-                                                    echo '<p><strong>About University</strong></p><p>'.nl2br($podaci['About_University']).'</p><p><strong>About Faculty</strong></p><p>'.nl2br($podaci['About_Faculty']).'</p></div>';
+                                                    echo '<p><strong>About University</strong></p><p>'.stripcslashes(nl2br($podaci['About_University'])).'</p><p><strong>About Faculty</strong></p><p>'.stripcslashes(nl2br($podaci['About_Faculty'])).'</p></div>';
 				}
 				else if($table=="companys")
 				{
