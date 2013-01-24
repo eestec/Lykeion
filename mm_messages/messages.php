@@ -2,6 +2,7 @@
 require_once('database.php');
 require_once('config.php');
 require_once('language.php');
+require_once('mail.php');
 
 class messages{
 	private $id;
@@ -41,11 +42,12 @@ class messages{
 	
 	public function save_conversation_to_database(){
 		$db= new database();
+                $db->open_connection();
 		// check if recepients exists
 		$a= explode(' ',$this->send_to);
-		$sql="SELECT ID FROM `mm_messages_conv_users` WHERE User='".$a[0]."'";
-		
-		list($result2,$a)=$db->query($sql);
+		$sql="SELECT ID, User_type, User_ID FROM `mm_messages_conv_users` WHERE User='%s'";
+		$result2=mysql_query(sprintf($sql, mysql_real_escape_string($a[0])));
+		//list($result2,$a)=$db->query($sql);
 		if($result2 && mysql_num_rows($result2)>0){
 			// move on
 			$sql="INSERT INTO `mm_messages_conversation` VALUES(NULL,'".htmlentities($this->headline,ENT_QUOTES, 'UTF-8')."')";
@@ -54,11 +56,33 @@ class messages{
 			list($a,$a)=$db->query($sql);
 			// add users to conversation
 			while ($podaci1 = mysql_fetch_array($result2)){
-				$sql="INSERT INTO `mm_messages_clients` VALUES(NULL,'".$this->id."','".$podaci1['ID']."','0','0')";
+				$reciver_id=$podaci1['ID'];
+				$receiver_type=$podaci1['User_type'];
+				$receiver_uid=$podaci1['User_ID'];
+				$sql="INSERT INTO `mm_messages_clients` VALUES(NULL,'".$this->id."','".$reciver_id."','0','0')";
 				$db->query($sql);
 			}
 				$sql="INSERT INTO `mm_messages_clients` VALUES(NULL,'".$this->id."','".$this->user_id."','1','0')";
 				$db->query($sql);
+				if($receiver_type=='company' || $receiver_type=='university')
+				{
+					$receiver_type=$receiver_type.'s';
+					$subject="[Lykeion Message] New message in your inbox ";
+		                    	$message="
+		                    	<html>
+		                    	<body bgcolor='#DCEEFC'>
+		                    	<p>Dear Sir or Madam,<br></p><p> We would like to inform that you received the message <strong>".$this->headline."</strong> in your inbox on Lykeion website.<p>
+		                    	<br><p> Message content: ".$this->msg."<br> To reply on the message, log in on http://lykeion.eestec.net and go to your inbox. </p>
+		                    	<p>Best Regards,</p>
+		                     	<p>Lykeion website team</p
+		                        ><img src='http://lykeion.eestec.net/images/lykeion-banner-v2.gif' width='300'>
+		                        <p>web: <a href='http://lykeion.eestec.net'>lykeion.eestec.net</a><br>
+		                        mail: <a href='mailto:lykeion@eestec.net'>lykeion@eestec.net</a><br>
+		                        <strong>POWER YOUR FUTURE</strong></p>
+		                     	</body></html>";
+					$mail=new mail();
+					$mail->SendMail($receiver_uid, $receiver_type, $subject, $message);
+				}
                                 echo '
 				<script type="text/javascript">
 					function errorhide(){
@@ -82,6 +106,31 @@ class messages{
 		list($a,$a)=$db->query($sql);
 		$sql="UPDATE `mm_messages_clients` SET Readed='0',Deleted='0' WHERE ID_conversation='".$this->id."' AND User!='".$this->user_id."'";
 		list($a,$a)=$db->query($sql);
+		$sql1="SELECT User_ID, User_type FROM mm_messages_conv_users WHERE ID=(SELECT User FROM mm_messages_clients WHERE ID_conversation='".$this->id."' AND User!='".$this->user_id."')";
+		list($res, $a)=$db->query($sql1);
+		while($row=mysql_fetch_array($res)){
+			$receiver_id=$row['User_ID'];
+			$receiver_type=$row['User_type']; 
+			if($receiver_type=='company' || $receiver_type=='university')
+				{
+					$receiver_type=$receiver_type.'s';
+					$subject="[Lykeion Message] New message in your inbox ";
+		                    	$message="
+		                    	<html>
+		                    	<body bgcolor='#DCEEFC'>
+		                    	<p>Dear Sir or Madam,<br></p><p> We would like to inform that you received the message <strong>".$this->headline."</strong> in your inbox on Lykeion website.<p>
+		                    	<br><p> Message content: ".$this->msg."<br> To reply on the message, log in on http://lykeion.eestec.net and go to your inbox. </p>
+		                    	<p>Best Regards,</p>
+		                     	<p>Lykeion website team</p
+		                        ><img src='http://lykeion.eestec.net/images/lykeion-banner-v2.gif' width='300'>
+		                        <p>web: <a href='http://lykeion.eestec.net'>lykeion.eestec.net</a><br>
+		                        mail: <a href='mailto:lykeion@eestec.net'>lykeion@eestec.net</a><br>
+		                        <strong>POWER YOUR FUTURE</strong></p>
+		                     	</body></html>";
+					$mail=new mail();
+					$mail->SendMail($receiver_id, $receiver_type, $subject, $message);
+				}
+		}
 		echo '
 				<script type="text/javascript">
 					function errorhide(){
@@ -112,12 +161,17 @@ class messages{
 		    	list($result1,$a)=$db->query($sql1);
 		    	
 		  		//show text messages
-		  		$sql1="SELECT c.User,m.Send,m.Headline,m.MSG FROM `mm_messages_msg` as m LEFT JOIN `mm_messages_conv_users` as c ON m.User=c.ID WHERE m.ID_conversation='".$id."' ORDER BY m.ID";
+		  		$sql1="SELECT c.User, c.User_type, m.Send,m.Headline,m.MSG FROM `mm_messages_msg` as m LEFT JOIN `mm_messages_conv_users` as c ON m.User=c.ID WHERE m.ID_conversation='".$id."' ORDER BY m.ID";
 		  		list($result1,$a)=$db->query($sql1);
 		  		
 		  		if($result1 && mysql_num_rows($result1)>0)
 		  		while ($podaci1 = mysql_fetch_array($result1)){
-					 $usr="SELECT Name, Surname from users where Username='".$podaci1['User']."'";
+					 if($podaci1['User_type']=='company')
+					 	$usr="SELECT Name, Contact_person as Surname from companys where Username='".$podaci1['User']."'";
+					 else if($podaci1['User_type']=='university')
+					 	$usr="SELECT Name_of_University as Name, Name_of_Faculty as Surname from universitys where Username='".$podaci1['User']."'";
+					 else
+					 	$usr="SELECT Name, Surname from users where Username='".$podaci1['User']."'";
                                     	list($res,$c)=$db->query($usr); 
                                     while($row=mysql_fetch_array($res)){
                                         $name=$row['Name']." ".$row['Surname'];}

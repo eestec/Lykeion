@@ -136,6 +136,61 @@ if($_SESSION['loged']=="true" && $_SESSION['admin']=="true" && @$_SESSION['ip']=
                                  </body></html>";
                                  $mail->SendMail($ID, 'users', $subject, $message);
                             }
+                                 
+                                  $sql="SELECT ID, Email FROM companys WHERE Status='Active'";
+                                  echo $sql;
+                            list($result,$a)=$db->query($sql);
+                            while(@$row=  mysql_fetch_array($result)){
+                                $ID=$row['ID'];
+                                $Email=$row['Email'];
+                                $subject="[Lykeion Update] Article ".$title." has been announced";
+                                $message="
+                                <html>
+                                <body bgcolor='#DCEEFC'>
+                                
+                                <p>Dear Sir or Madam,<br></p>
+                                <p> We would like to inform you that new article on the Lykeion, announced by ".$announcedby.", has been published.
+                                <h2> ".$title."</h2>
+                                <br><br>
+                                ".stripcslashes($intro)."<br>
+                                    <br>
+                                    <p> Visit and read more about the article <a href='http://lykeion.eestec.net/index.php?do=preview&wt=article&id=".$id."'>here.</a></p>
+                                <p>Best Regards,</p>
+                                <p>Lykeion website team</p
+                                ><img src='http://lykeion.eestec.net/images/lykeion-banner-v2.gif' width='300'>
+                                <p>web: <a href='http://lykeion.eestec.net'>lykeion.eestec.net</a><br>
+                                mail: <a href='mailto:lykeion@eestec.net'>lykeion@eestec.net</a><br>
+                                <strong>POWER YOUR FUTURE</strong></p>
+                                 </body></html>";
+                                 $mail->SendMail($ID, 'companys', $subject, $message);
+                            }
+                            
+                              $sql="SELECT ID, Email FROM universitys WHERE Status='Active'";
+                               echo $sql;
+                            list($result,$a)=$db->query($sql);
+                            while(@$row=  mysql_fetch_array($result)){
+                                $ID=$row['ID'];
+                                $subject="[Lykeion Update] Article ".$title." has been announced";
+                                $message="
+                                <html>
+                                <body bgcolor='#DCEEFC'>
+                                
+                                <p>Dear Sir or Madam,<br></p>
+                                <p> We would like to inform you that new article on the Lykeion, announced by ".$announcedby.", has been published.
+                                <h2> ".$title."</h2>
+                                <br><br>
+                                ".stripcslashes($intro)."<br>
+                                    <br>
+                                    <p> Visit and read more about the article <a href='http://lykeion.eestec.net/index.php?do=preview&wt=article&id=".$id."'>here.</a></p>
+                                <p>Best Regards,</p>
+                                <p>Lykeion website team</p
+                                ><img src='http://lykeion.eestec.net/images/lykeion-banner-v2.gif' width='300'>
+                                <p>web: <a href='http://lykeion.eestec.net'>lykeion.eestec.net</a><br>
+                                mail: <a href='mailto:lykeion@eestec.net'>lykeion@eestec.net</a><br>
+                                <strong>POWER YOUR FUTURE</strong></p>
+                                 </body></html>";
+                                 $mail->SendMail($ID, 'universitys', $subject, $message);
+                            }
                             echo '
                                             <script type="text/javascript">
                                                     function errorhide(){

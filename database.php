@@ -9,7 +9,7 @@ class database {
 	private $database;
 	private $connect;
 	private $select_db;
-	
+
 	public function __construct(){
 		    $this->hostname = DB_HOSTNAME;
 		  $this->username = DB_USERNAME;
@@ -23,7 +23,7 @@ class database {
 		  $this->password = DB_PASSWORD;;
 		  $this->database = DB_DATABASE;
 	 }
-	 
+
 	public function open_connection()
 	{
 		  try
@@ -65,10 +65,10 @@ class database {
          $error=addslashes($e);
      }
                   
-		 
-	
 
-	             
+
+
+
 	if($error!=NULL){
              $q="INSERT INTO log VALUES(NULL,'".$_SESSION['id']."','".$_SESSION['rank']."','$query','$error',NOW())";
              mysql_query($q);
@@ -78,7 +78,7 @@ class database {
 	 $this->close_connection();
 	 return array($sql,$lst_id);
 	}
-	
+
 }
 
 ?>
