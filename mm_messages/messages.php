@@ -72,7 +72,7 @@ class messages{
 		                    	<html>
 		                    	<body bgcolor='#DCEEFC'>
 		                    	<p>Dear Sir or Madam,<br></p><p> We would like to inform that you received the message <strong>".$this->headline."</strong> in your inbox on Lykeion website.<p>
-		                    	<br><p> Message content: ".$this->msg."<br> To reply on the message, log in on http://lykeion.eestec.net and go to your inbox. </p>
+		                    	<p> Message content: ".$this->msg."<br><br> To reply on the message, log in on http://lykeion.eestec.net and go to your inbox. </p>
 		                    	<p>Best Regards,</p>
 		                     	<p>Lykeion website team</p
 		                        ><img src='http://lykeion.eestec.net/images/lykeion-banner-v2.gif' width='300'>
@@ -118,8 +118,8 @@ class messages{
 		                    	$message="
 		                    	<html>
 		                    	<body bgcolor='#DCEEFC'>
-		                    	<p>Dear Sir or Madam,<br></p><p> We would like to inform that you received the message <strong>".$this->headline."</strong> in your inbox on Lykeion website.<p>
-		                    	<br><p> Message content: ".$this->msg."<br> To reply on the message, log in on http://lykeion.eestec.net and go to your inbox. </p>
+		                    	<p>Dear Sir or Madam,<br></p><p> We would like to inform that you received a reply in one of the conversations in your inbox on Lykeion website.<p>
+		                    	<p> Message content: ".$this->msg."<br><br> To reply on the message, log in on http://lykeion.eestec.net and go to your inbox. </p>
 		                    	<p>Best Regards,</p>
 		                     	<p>Lykeion website team</p
 		                        ><img src='http://lykeion.eestec.net/images/lykeion-banner-v2.gif' width='300'>
