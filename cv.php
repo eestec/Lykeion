@@ -92,7 +92,7 @@ class Students_cv{
 	}
 	
 	public function update_to_database_personal($redirect=0){
-		$db= new database();
+		$db= new database(); 
 		$sql="UPDATE `students` SET  Name='".addslashes($this->Name)."', Surname='".addslashes($this->Surname)."', Date_of_birth='".addslashes($this->Date_of_birth)."', Country='".addslashes($this->Country)."', City='".addslashes($this->City)."', Address='".addslashes($this->Address)."', Phone_number='".addslashes($this->Phone_number)."', Email='".addslashes($this->Email)."', Nationality='".addslashes($this->Nationality)."', Fax='".addslashes($this->Fax)."', Gender='".$this->Gender."', Desired_employment='".addslashes($this->Desired_employment)."', Country_code='".$this->Country_code."', Postal_code='".$this->Postal_code."' WHERE ID='".$this->ID."'";
                 
 		
@@ -643,46 +643,60 @@ class Students_cv{
                 
                 $doc->formatOutput = true;
                 
-		$europass = $doc->createElementNS("http://europass.cedefop.europa.eu/Europass/V2.0", "europass:learnerinfo");
-
-                $europass -> setAttribute (  'xsi:schemaLocation' , 'http://europass.cedefop.europa.eu/Europass/V2.0 http://europass.cedefop.europa.eu/xml/EuropassSchema_V2.0.xsd' );
+		$europass = $doc->createElement("SkillsPassport");
+                 $europass -> setAttribute ( 'xmlns' , 'http://europass.cedefop.europa.eu/Europass' );
+                $europass -> setAttribute (  'xsi:schemaLocation' , 'http://europass.cedefop.europa.eu/Europass http://europass.cedefop.europa.eu/xml/EuropassSchema_V3.0-rc7.xsd' );
                 //$europass -> setAttributeNS ("http://europass.cedefop.europa.eu/Europass/V2.0", 'xmlns:europass' , 'http://europass.cedefop.europa.eu/Europass/V2.0' );
                 $europass -> setAttribute (  'xmlns:xsi' , 'http://www.w3.org/2001/XMLSchema-instance' );
-                $europass -> setAttribute ( 'locale' , 'en_GB' );
+                $europass -> setAttribute ( 'locale' , 'en' );
 		$doc->appendChild( $europass ); //Append `EuroPass` Tag to Document
 		
+                $docinfo=$doc->createElement("DocumentInfo");
+                $europass->appendChild($docinfo);
+                $docinfo -> appendChild ( $doc->createElement( 'DocumentType' , "ECV" ) );
+                $docinfo -> appendChild ( $doc->createElement( 'CreationDate' , "2011-11-03T00:00:00.000Z" ) );
+                $docinfo -> appendChild ( $doc->createElement( 'XSDVersion' , "V3.0" ) );
+                $docinfo -> appendChild ( $doc->createElement( 'Generator' , "EWA" ) );
+                $docinfo -> appendChild ( $doc->createElement( 'Comment' , "Automatically generated Europass CV" ) );
 		/*$europass = $doc->getElementsByTagNameNS("*", 'europass:learnerinfo' );
 		$europass = $europass->item( 0 );*/
 		
 		/*Identification Start*/
                 
-		$identification = $doc -> createElement ( 'identification' );
+		$identification = $doc -> createElement ( 'Identification' );
 		$europass -> appendChild ( $identification ); //Append `identification` tag to `EuroPass` Tag
-                
+                $personname = $doc -> createElement ( 'PersonName' );
+		$identification -> appendChild ( $personname );
 		
-		$identification -> appendChild ( $doc->createElement( 'firstname' , $this->Name ) );
-		$identification -> appendChild ( $doc->createElement( 'lastname' , $this->Surname ) );
+		$personname -> appendChild ( $doc->createElement( 'FirstName' , $this->Name ) );
+		$personname -> appendChild ( $doc->createElement( 'Surname' , $this->Surname ) );
 		
-		$contactinfo = $doc -> createElement( 'contactinfo' );
+		$contactinfo = $doc -> createElement( 'ContactInfo' );
 		$identification -> appendChild ( $contactinfo ); //Append `contactinfo` tag to `identification` tag
 
-		$address = $doc -> createElement ( 'address' );
+		$address = $doc -> createElement ( 'Address' );
 		$contactinfo -> appendChild ( $address );
+                
+                $contact = $doc -> createElement ( 'Contact' );
+		$contactinfo -> appendChild ( $contact );
 		
-		$address -> appendChild ( $doc -> createElement( 'addressline' , $this -> Address ) );
-		$address -> appendChild ( $doc -> createElement( 'municipality' , $this -> City ) );
-		$address -> appendChild ( $doc -> createElement( 'postalcode' , $this -> Postal_code ) );
+		$contact -> appendChild ( $doc -> createElement( 'AddressLine' , $this -> Address ) );
+		$contact -> appendChild ( $doc -> createElement( 'Municipality' , $this -> City ) );
+		$contact -> appendChild ( $doc -> createElement( 'PostalCode' , $this -> Postal_code ) );
 		
-		$country = $doc -> createElement ( 'country' );
-		$address->appendChild($country);
-		$country -> appendChild ( $doc -> createElement( 'code' , $this->Country_code ) );
-		$country -> appendChild ( $doc -> createElement( 'label' , $this->Country ) );
+		$country = $doc -> createElement ( 'Country' );
+		$contact->appendChild($country);
+		$country -> appendChild ( $doc -> createElement( 'Code' , $this->Country_code ) );
+		$country -> appendChild ( $doc -> createElement( 'Label' , $this->Country ) );
 
 		//$address -> appendChild ( $country );
+                
+                $use = $doc -> createElement ( 'Use' );
+		$contactinfo -> appendChild ( $use );
 		
-		$contactinfo -> appendChild ( $doc -> createElement( 'telephone' , $this -> Phone_number ) );
-		$contactinfo -> appendChild ( $doc -> createElement( 'fax' , $this -> Fax) );
-		$contactinfo -> appendChild ( $doc -> createElement( 'email' , $this -> Email ) );
+		$use -> appendChild ( $doc -> createElement( 'telephone' , $this -> Phone_number ) );
+		$use -> appendChild ( $doc -> createElement( 'fax' , $this -> Fax) );
+		$use -> appendChild ( $doc -> createElement( 'email' , $this -> Email ) );
 		
 		$demographics = $doc -> createElement ( 'demographics' );
 		$identification -> appendChild ( $demographics );
@@ -893,6 +907,475 @@ class Students_cv{
              * The data are loaded in ecv_xml table.*/
 
             # Get from the XML all the elements with tag name 'identification' and load them in a list.
+            $identifications = $doc->getElementsByTagName("Identification");
+            foreach( $identifications as $identification )
+            {
+                $ok++;
+
+            /* For each on of the list elements get the various elements included in the identification entity
+             * and load them in the coresponding variables. */
+                    if ($identification->getElementsByTagName("FirstName"))
+                    { 
+                            if(strlen($identification->getElementsByTagName("FirstName")->item(0)->nodeValue)>3)
+                                $this->Name=$identification->getElementsByTagName("FirstName")->item(0)->nodeValue;
+                    } else {}
+                    if ($identification->getElementsByTagName("Surname")) {
+                            if(strlen( $identification->getElementsByTagName("Surname")->item(0)->nodeValue)>3)
+                                    $this->Surname=$identification->getElementsByTagName("Surname")->item(0)->nodeValue;
+                    } else {}
+                    if ($identification->getElementsByTagName("AddressLine")) {
+                            $this->Address  = $identification->getElementsByTagName("AddressLine")->item(0)->nodeValue;
+                    } else {}
+                    if ($identification->getElementsByTagName("Municipality")) {
+                            $this->City = $identification->getElementsByTagName("Municipality")->item(0)->nodeValue;
+                    } else {}
+                    if ($identification->getElementsByTagName("PostalCode")) {
+                            $this->Postal_code   = $identification->getElementsByTagName("PostalCode")->item(0)->nodeValue;
+                    } else {}
+                    if ($identification->getElementsByTagName("Country")) {
+                            $countries    = $identification->getElementsByTagName("Country");
+                            foreach ($countries as $country)
+                            {
+                                    if ($identification->getElementsByTagName("Code")->item(0)) {
+                                            $this->Country_code  = $country->getElementsByTagName("Code")->item(0)->nodeValue;
+                                    } else {}
+                                    if ($identification->getElementsByTagName("Label")->item(0)) {
+                                            $this->Country = $country->getElementsByTagName("Label")->item(0)->nodeValue;
+                                    } else {}
+                            }
+                    } else {
+
+                    }
+                    if ($identification->getElementsByTagName("TelephoneList")->item(0)) {
+                        foreach($identification->getElementsByTagName("Telephone") as $tel){
+                            $this->Phone_number =$tel->getElementsByTagName("Contact")->item(0)->nodeValue; 
+                        }
+                    } else {}
+                    if ($identification->getElementsByTagName("fax")) {
+                            $this->Fax       = $identification->getElementsByTagName("fax")->item(0)->nodeValue;
+                    } else {}
+                    
+                    if ($identification->getElementsByTagName("Email")) {
+                            if(strlen($identification->getElementsByTagName("Contact")->item(0)->nodeValue)>5){ 
+                                if($this->valid_email($identification->getElementsByTagName("Contact")->item(0)->nodeValue)==true)
+                                        $this->Email=$identification->getElementsByTagName("Contact")->item(0)->nodeValue;
+                            }
+                    } else {}
+                    if ($identification->getElementsByTagName("Gender")) {
+                            $this->Gender    = $identification->getElementsByTagName("Code")->item(0)->nodeValue;
+                    } else {}
+                    if ($identification->getElementsByTagName("Birthdate")->item(0)) {
+                        
+                            $year=$identification->getElementsByTagName("Birthdate")->item(0)->getAttribute("year"); 
+                            $month=$identification->getElementsByTagName("Birthdate")->item(0)->getAttribute("month");
+                            $day=$identification->getElementsByTagName("Birthdate")->item(0)->getAttribute("day");
+                            $this->Date_of_birth  = $year.$month.$day;
+                    } else {}
+
+
+            
+
+	/* Retrive the generated id for the insert.
+	 * We will use it later to update the master table along with the detail ones with the rest of the data.
+	 */
+
+	$i=0;
+	# Load the different nationalities in the coresponding variables
+	$nationalities = $identification->getElementsByTagName("Nationality");
+	/* For each on of the list elements get the various elements included in the nationality entity
+ 	* and load them in the coresponding variables. */
+	foreach ($nationalities as $nationality)
+	{
+		if ($nationality->getElementsByTagName("Code")->item(0))
+		{
+			$ncode  = $nationality->getElementsByTagName("Code")->item(0)->nodeValue;
+		} else
+		{
+			
+		}
+		if ($nationality->getElementsByTagName("Label")->item(0))
+		{
+			$this->Nationality = $nationality->getElementsByTagName("Label")->item(0)->nodeValue;
+		} else
+		{
+			
+		}
+                
+		$ok++;
+
+	}
+
+            }
+
+# Get from the XML all the elements with tag name 'application' and load them in a list.
+$applications = $doc->getElementsByTagName("Headline");
+/* For each on of the list elements get the various elements included in the application entity
+* and load them in the coresponding variables. */
+foreach( $applications as $application )
+{
+    $ok++;
+	if ($application->getElementsByTagName("Code")->item(0)) {
+		$appcode  = $application->getElementsByTagName("Code")->item(0)->nodeValue;
+	} else {}
+	if ($application->getElementsByTagName("Description")->item(0)) {
+            foreach($application->getElementsByTagName("Description") as $des){
+                $this->Desired_employment=$des->getElementsByTagName("Label")->item(0)->nodeValue;
+            }
+		
+	} else {}
+	
+}
+
+$i=0;
+# Get from the XML all the elements with tag name 'workexperience' and load them in a list.
+$workexperiencelist = $doc->getElementsByTagName("WorkExperience"); 
+if ($workexperiencelist->length > 0)
+	/* For each on of the list elements get the various elements included in the workexperience entity
+ 	* and load them in the coresponding variables. */
+	foreach ($workexperiencelist as $workexperience)
+	{
+                $ok++;
+                $this->work_id[$i]=-1;
+		$froms = $workexperience->getElementsByTagName("From");
+                $date=0;
+                $day=0;$month=0;$year=0;
+		
+                    
+
+			if($workexperience->getElementsByTagName("From")->item(0)) {
+				$this->fyear[$i] = $workexperience->getElementsByTagName("From")->item(0)->getAttribute("year");
+                                $year++; $date++;
+			} 
+			if($workexperience->getElementsByTagName("From")->item(0)) {
+				$this->fmonth[$i] = trim($workexperience->getElementsByTagName("From")->item(0)->getAttribute("month"),'-');
+                                $month++;
+			} 
+			if($workexperience->getElementsByTagName("From")->item(0)) {
+				$this->fday[$i] = trim($workexperience->getElementsByTagName("From")->item(0)->getAttribute("day"),'-');
+                                $day++;
+			} 
+                        
+		
+                if($date==0){
+                    $this->fyear[$i]="Y";
+                    $this->fmonth[$i]="M";
+                    $this->fday[$i]="D";
+                }
+                if($day==0) $this->fday[$i]="D";
+                if($month==0) $this->fmonth[$i]="M";
+                if($year==0) $this->fyear[$i]="Y";
+                $date=0;
+                $day=0;$month=0;$year=0;
+			if($workexperience->getElementsByTagName("To")->item(0)) {
+				$this->tyear[$i] = $workexperience->getElementsByTagName("To")->item(0)->getAttribute("year");
+                                $year++; $date++;
+			} 
+			if($workexperience->getElementsByTagName("To")->item(0)) {
+				$this->tmonth[$i] = trim($workexperience->getElementsByTagName("To")->item(0)->getAttribute("month"),'-');
+                                $month++;
+			} 
+			if($workexperience->getElementsByTagName("To")->item(0)) {
+				$this->tday[$i] = trim($workexperience->getElementsByTagName("To")->item(0)->getAttribute("day"),'-');
+                                $day++;
+			} 
+                        
+		
+                if($date==0){
+                    $this->tyear[$i]="Y";
+                    $this->tmonth[$i]="M";
+                    $this->tday[$i]="D";
+                }
+                if($day==0) $this->tday[$i]="D";
+                if($month==0) $this->tmonth[$i]="M";
+                if($year==0) $this->tyear[$i]="Y";
+		$positions = $workexperience->getElementsByTagName("Position");
+		foreach ($positions as $position)
+		{
+			if($position->getElementsByTagName("Code")->item(0)) {
+				$pcode = $position->getElementsByTagName("Code")->item(0)->nodeValue;
+			} 
+			if($position->getElementsByTagName("Label")->item(0)) {
+				$this->position[$i] = $position->getElementsByTagName("Label")->item(0)->nodeValue;
+                                
+			} 
+		}
+		if ($workexperience->getElementsByTagName("Activities")->item(0)) {
+			$this->activities[$i] = $workexperience->getElementsByTagName("Activities")->item(0)->nodeValue;
+                        
+		} 
+		if ($workexperience->getElementsByTagName("Name")->item(0)) {
+			$this->work_name[$i] = $workexperience->getElementsByTagName("Name")->item(0)->nodeValue;
+		} 
+		if ($workexperience->getElementsByTagName("AddressLine")->item(0)) {
+			$this->work_adress[$i] = $workexperience->getElementsByTagName("AddressLine")->item(0)->nodeValue;
+		} 
+		if ($workexperience->getElementsByTagName("Municipality")->item(0)) {
+			$this->work_city[$i] = $workexperience->getElementsByTagName("Municipality")->item(0)->nodeValue;
+		} 
+		if ($workexperience->getElementsByTagName("PostalCode")->item(0)) {
+			$this->pcode[$i] = $workexperience->getElementsByTagName("PostalCode")->item(0)->nodeValue;
+		} 
+		$countries = $workexperience->getElementsByTagName("Country");
+		foreach ($countries as $country)
+		{
+			if($country->getElementsByTagName("Code")->item(0)) {
+				$this->work_country_code[$i] = $country->getElementsByTagName("Code")->item(0)->nodeValue;
+			} 
+			if($country->getElementsByTagName("Label")->item(0)) {
+				$this->work_country[$i] = $country->getElementsByTagName("Label")->item(0)->nodeValue;
+			} 
+		}
+		$sectors = $workexperience->getElementsByTagName("Sector");
+		foreach ($sectors as $sector)
+		{
+			if($sector->getElementsByTagName("Code")->item(0)) {
+				$this->sector_code = $sector->getElementsByTagName("Code")->item(0)->nodeValue;
+			} 
+			if($sector->getElementsByTagName("Label")->item(0)) {
+				$this->sector[$i] = $sector->getElementsByTagName("Label")->item(0)->nodeValue;
+			} 
+		}
+                $i++;
+		
+	}
+$i=0;
+# Get from the XML all the elements with tag name 'education' and load them in a list.
+$educationlist = $doc->getElementsByTagName("Education");
+if ($educationlist->length > 0)
+	/* For each on of the list elements get the various elements included in the education entity
+ 	* and load them in the coresponding variables. */
+	foreach ($educationlist as $education)
+	{
+                $ok++;
+                $this->education_id[$i]=-1;
+		
+                 $date=0;
+                $day=0;$month=0;$year=0;
+		
+                    
+			if($education->getElementsByTagName("From")->item(0)) {
+				$this->org_fyear[$i] = $education->getElementsByTagName("From")->item(0)->getAttribute("year");
+                                $year++;$date++;
+			} else {}
+			if($education->getElementsByTagName("From")->item(0)) {
+				$this->org_fmonth[$i] = trim($education->getElementsByTagName("From")->item(0)->getAttribute("month"),'-');
+                                $month++;
+			} else {}
+			if($education->getElementsByTagName("From")->item(0)) {
+				$this->org_fday[$i] = trim($education->getElementsByTagName("From")->item(0)->getAttribute("day"),'-');
+                                $day++;
+			} else {}
+		
+                if($date==0){
+                    $this->org_fyear[$i]="Y";
+                    $this->org_fmonth[$i]="M";
+                    $this->org_fday[$i]="D";
+                }
+                if($day==0) $this->org_fday[$i]="D";
+                if($month==0) $this->org_fmonth[$i]="M";
+                if($year==0) $this->org_fyear[$i]="Y";
+		
+                 $date=0;
+                $day=0;$month=0;$year=0;
+		
+                  
+			if($education->getElementsByTagName("To")->item(0)) {
+				$this->org_tyear[$i] = $education->getElementsByTagName("To")->item(0)->getAttribute("year");
+                                $year++;   $date++;
+			} else {}
+			if($education->getElementsByTagName("To")->item(0)) {
+				$this->org_tmonth[$i] = trim($education->getElementsByTagName("To")->item(0)->getAttribute("month"),'-');
+                                $month++;
+			} else {}
+			if($education->getElementsByTagName("To")->item(0)) {
+				$this->org_tday[$i] = trim($education->getElementsByTagName("To")->item(0)->getAttribute("day"),'-');
+                                $day++;
+			} else {}
+		
+                 if($date==0){
+                    $this->org_tyear[$i]="Y";
+                    $this->org_tmonth[$i]="M";
+                    $this->org_tday[$i]="D";
+                }
+                if($day==0) $this->org_tday[$i]="D";
+                if($month==0) $this->org_tmonth[$i]="M";
+                if($year==0) $this->org_tyear[$i]="Y";
+		if ($education->getElementsByTagName("Title")->item(0)) {
+			$this->title[$i] = $education->getElementsByTagName("Title")->item(0)->nodeValue;
+		} else {}
+		if ($education->getElementsByTagName("Activities")->item(0)) {
+			$this->subject[$i] = $education->getElementsByTagName("Activities")->item(0)->nodeValue;
+		} else {}
+
+		if ($education->getElementsByTagName("Name")->item(0)) {
+			$this->org_name[$i] = $education->getElementsByTagName("Name")->item(0)->nodeValue;
+		} else {}
+		if ($education->getElementsByTagName("AddressLine")->item(0)) {
+			$this->org_address[$i] = $education->getElementsByTagName("AddressLine")->item(0)->nodeValue;
+		} else {}
+		if ($education->getElementsByTagName("Municipality")->item(0)) {
+			$this->org_city[$i] = $education->getElementsByTagName("Municipality")->item(0)->nodeValue;
+		} else {}
+		if ($education->getElementsByTagName("PostalCode")->item(0)) {
+			$epcode = $education->getElementsByTagName("PostalCode")->item(0)->nodeValue;
+		} else {}
+
+		$ecountries = $education->getElementsByTagName("Country");
+		foreach ($ecountries as $ecountry)
+		{
+			if($ecountry->getElementsByTagName("Code")->item(0)) {
+				$educcode = $ecountry->getElementsByTagName("Code")->item(0)->nodeValue;
+			} else {}
+			if($ecountry->getElementsByTagName("Label")->item(0)) {
+				$this->org_country[$i] = $ecountry->getElementsByTagName("Label")->item(0)->nodeValue;
+			} else {}
+		}
+		if ($education->getElementsByTagName("type")->item(0)) {
+			$this->org_type[$i] = $education->getElementsByTagName("type")->item(0)->nodeValue;
+		}
+
+		$levels = $education->getElementsByTagName("Level");
+		foreach ($levels as $level)
+		{
+			if($level->getElementsByTagName("Code")->item(0)) {
+				$edulcode = $level->getElementsByTagName("Code")->item(0)->nodeValue;
+			} else {}
+			if($level->getElementsByTagName("Label")->item(0)) {
+				$this->edu_level[$i] = $level->getElementsByTagName("Label")->item(0)->nodeValue;
+			} else {}
+		}
+
+		$edufields = $education->getElementsByTagName("Field");
+		foreach ($edufields as $edufield)
+		{
+			if($edufield->getElementsByTagName("Code")->item(0)) {
+				$edufcode = $edufield->getElementsByTagName("Code")->item(0)->nodeValue;
+			} else {}
+			if($edufield->getElementsByTagName("Label")->item(0)) {
+				$this->edu_field[$i] = $edufield->getElementsByTagName("Label")->item(0)->nodeValue;
+			} else {}
+		}
+		#Insert the data in the ecv_education table
+		$i++;
+	}
+
+# Get from the XML all the elements with tag name 'languagelist' and load them in a list.
+$languagelists = $doc->getElementsByTagName("Linguistic");
+$i=0;
+/* For each on of the list elements get the various elements included in the languagelist entity
+* and load them in the coresponding variables. */
+foreach ($languagelists as $languagelist)
+{
+        $ok++;
+	$monlang = $languagelist->getElementsByTagName("MotherTongue");
+        foreach($monlang as $mon){
+            foreach($mon->getElementsByTagName("Description") as $m){
+                $this->Mother_tongue=$m->getElementsByTagName("Label")->item(0)->nodeValue; 
+            }
+        }
+	$num = 0;
+	foreach ($languagelist->getElementsByTagName("ForeignLanguage") as $language)
+	{
+            foreach($language->getElementsByTagName("Description") as $la){
+                $this->olanguage[$i] =$la->getElementsByTagName("Label")->item(0)->nodeValue; 
+            }
+            $this->language_id[$i]=-1;
+		
+		
+			
+				
+				$this->listening[$i]          = $language->getElementsByTagName("Listening")->item(0)->nodeValue;
+				$this->reading[$i]            = $language->getElementsByTagName("Reading")->item(0)->nodeValue;
+				$this->spoken_interaction[$i]  = $language->getElementsByTagName("SpokenInteraction")->item(0)->nodeValue;
+				$this->spoken_production[$i]   = $language->getElementsByTagName("SpokenProduction")->item(0)->nodeValue;
+				$this->writing[$i]            = $language->getElementsByTagName("Writing")->item(0)->nodeValue;
+				#Insert the data in the ecv_language table
+				$i++;
+				break;
+		
+                
+
+	}
+}
+
+
+
+$k = 0;
+/* For each on of the list elements get the various elements included in the skilllist entity
+* and load them in the coresponding variables. */
+
+    $ok++;
+	$skillitems = $doc->getElementsByTagName("Communication");
+	foreach($skillitems as $skillitem)
+	{
+		$this->Social_skills= $skillitem->getElementsByTagName("Description")->item(0)->nodeValue;
+                $ok++;
+		
+	}
+        $skillitems = $doc->getElementsByTagName("Organisational");
+	foreach($skillitems as $skillitem)
+	{
+            $this->Organisational_skills         = $skillitem->getElementsByTagName("Description")->item(0)->nodeValue;
+            $ok++;
+        }
+         $skillitems = $doc->getElementsByTagName("Computer");
+	foreach($skillitems as $skillitem)
+	{
+            $this->Computer_skills = $skillitem->getElementsByTagName("Description")->item(0)->nodeValue;
+            $ok++;
+        }
+         $skillitems = $doc->getElementsByTagName("Other");
+	foreach($skillitems as $skillitem)
+	{
+            $this->Other_skills          = $skillitem->getElementsByTagName("Description")->item(0)->nodeValue; 
+            $ok++;
+        }
+        
+         $this->Driving_licence=0;
+
+
+
+
+# Get from the XML all the elements with tag name 'misclist' and load them in a list.
+$misclists = $doc->getElementsByTagName("AchievementList");
+
+/* For each on of the list elements get the various elements included in the misclist entity
+* and load them in the coresponding variables. */
+foreach( $misclists as $misclist )
+{
+    $this->Additional_information="";
+	$miscitems = $misclist->getElementsByTagName("Achievement");
+	foreach($miscitems as $miscitem)
+	{
+		$this->Additional_information = $this->Additional_information." ".$miscitem->getElementsByTagName("Label")->item(0)->nodeValue;
+                $this->Additional_information=$this->Additional_information.":  ".$miscitem->getElementsByTagName("Description")->item(0)->nodeValue;
+		
+	}
+	#Update the data in the ecv_xml table with the data of the misc skill section
+	
+}
+
+$this->Annexes="";
+#Delete the uploaded file
+
+                  
+		return $ok;
+		  
+	}
+        
+        public function readXMLold($xml)
+        {
+                            /* @var DOMDocument
+             * Load the XML File in a DOM Document.
+             * */
+            $doc = new DOMDocument();
+            $doc->load($xml);
+            $ok=0;
+            
+            /* Load the data of the first step, included in the <identification> tag.
+             * The data are loaded in ecv_xml table.*/
+
+            # Get from the XML all the elements with tag name 'identification' and load them in a list.
             $identifications = $doc->getElementsByTagName("identification");
             foreach( $identifications as $identification )
             {
@@ -973,14 +1456,14 @@ class Students_cv{
 			$ncode  = $nationality->getElementsByTagName("code")->item(0)->nodeValue;
 		} else
 		{
-			
+
 		}
 		if ($nationality->getElementsByTagName("label")->item(0))
 		{
 			$this->Nationality = $nationality->getElementsByTagName("label")->item(0)->nodeValue;
 		} else
 		{
-			
+
 		}
                 
 		$ok++;
@@ -1002,7 +1485,7 @@ foreach( $applications as $application )
 	if ($application->getElementsByTagName("label")->item(0)) {
 		$this->Desired_employment = $application->getElementsByTagName("label")->item(0)->nodeValue;
 	} else {}
-	
+
 }
 
 $i=sizeof($this->work_id);
@@ -1120,7 +1603,7 @@ if ($workexperiencelist->length > 0)
 			} 
 		}
                 $i++;
-		
+
 	}
 $i=sizeof($this->education_id);
 # Get from the XML all the elements with tag name 'education' and load them in a list.
@@ -1267,7 +1750,7 @@ foreach ($languagelists as $languagelist)
 				} else {}
 				$this->Mother_tongue = $language->getElementsByTagName("label")->item(0)->nodeValue;
 				#Update the data in the ecv_xml table with the mother_language
-				
+
 				break;
 			case "europass:foreign" :
 				$this->language_code[$i]            = $language->getElementsByTagName("code")->item($num)->nodeValue;
@@ -1306,7 +1789,7 @@ foreach( $skilllists as $skilllist )
 		$this->Other_skills          = $skillitems->item(5)->nodeValue;
 	}
 	#Update the data in the ecv_xml table with the data of the skill section
-	
+
 }
 
 # Get from the XML all the elements with tag name 'drivinglicence' and load them in a list.
@@ -1318,7 +1801,7 @@ if ($drivingcnt > 0)
 	for ($idx = 0; $idx < $drivingcnt; $idx++) {
 		$driv = $drivinglist->item($idx)->nodeValue;
 		#Insert the data in the ecv_driving_licence table
-		
+
 
 	}
         if($driv!="" || $driv!=NULL) $this->Driving_licence=1;
@@ -1339,15 +1822,14 @@ foreach( $misclists as $misclist )
 		$this->Annexes    = $miscitems->item(1)->nodeValue;
 	}
 	#Update the data in the ecv_xml table with the data of the misc skill section
-	
+
 }
 
 
-#Delete the uploaded file
-unlink($xml);
+
                   
 		return $ok;
-		  
+
 	}
         public function upload($p){
             $upload_path = "/tmp/";
@@ -1371,6 +1853,11 @@ unlink($xml);
                     if(move_uploaded_file($_FILES['xml_cv']['tmp_name'], $target_path)) {
                         $xml = $target_path;
                         $ok=$this->readXML($xml);
+                        if($ok<2){ 
+                            $ok=$this->readXMLold($xml);
+                        }
+                        #Delete uploaded file
+                        unlink($xml);
                         if($ok<2)
                             return 99;
                         else return 0;
