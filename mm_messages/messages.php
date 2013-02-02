@@ -243,7 +243,7 @@ class messages{
 			<label>'.$messages_language[3].': </label><input name="messages_send_to" type="text"  id="messages_send_to" />
 			<label>'.$messages_language[0].': </label><input name="messages_headline" class="lykeion_textbox" type="text" id="messages_headline" />
 			<label>'.$messages_language[1].': </label><textarea name="messages_msg" class="lykeion_textbox" cols="70" rows="5" id="messages_msg"></textarea>
-			<input class="btn" type="submit" name="messages_start_conversation" value="">
+			<input class="send-btn" type="submit" name="messages_start_conversation" value="">
 		
 		</form></div></div>';
 	}

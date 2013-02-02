@@ -943,6 +943,15 @@ background: url("../images/edit-cv-save-btn.png");
   cursor: pointer;
   }
   
+.studentform  .send-btn {
+  width: 59px;
+  height: 31px;
+  border: none;
+  margin: 70px 0px 60px 191px;
+  background: url("../images/send-btn.png");
+  cursor: pointer;
+}
+  
 .studentform   .search-btn {
 display: block;
 background: url("../images/edit-cv-btn-bg.png") repeat-x;
