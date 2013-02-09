@@ -475,14 +475,14 @@ class Students_cv{
 		 <label>Surname</label><input name="stud_cv_Surname" class="lykeion" type="text" id="stud_cv_Surname"  value="'.$this->Surname.'"/> 
 		 <label>Country</label><input name="stud_cv_Country" class="lykeion" type="text" id="stud_cv_Country"  value="'.$this->Country.'"/> 
 		 <label>City</label> <input name="stud_cv_City" class="lykeion" type="text" id="stud_cv_City"  value="'.$this->City.'"/> 
-		 <label>Address</label> <input name="stud_cv_Address" class="lykeion" type="text" id="stud_cv_Address"  value="'.$this->Address.'"/>
+		 <label>Address</label> <input name="stud_cv_Address" class="lykeion" type="text" id="stud_cv_Address"  value="'.stripcslashes($this->Address).'"/>
 		 <label>Phone number</label> <input name="stud_cv_Phone_number" class="lykeion" type="text" id="stud_cv_Phone_number" value="'.$this->Phone_number.'"/>
 		 <label>E-mail</label> <input name="stud_cv_Email" class="lykeion" type="text" id="stud_cv_Email" value="'.$this->Email.'"/> 
 		 <label>Nationality</label> <input name="stud_cv_Nationality" class="lykeion" type="text" id="stud_cv_Nationality"  value="'.$this->Nationality.'"/> 
 		 <label>Date of birth</label> <input name="stud_cv_Date_of_birth" class="lykeion" type="date" id="stud_cv_Date_of_birth"  value="'.$this->Date_of_birth.'"/> 
                  <label>Fax</label> <input name="stud_cv_Fax" class="lykeion" type="text" id="stud_cv_Fax"  value="'.$this->Fax.'"/> <br>
 		 <label>Gender</label><select name="stud_cv_Gender" ><option>'.$this->Gender.'</option><option>M</option><option>F</option></select><br>
-		 <label>Desired employment</label> <input name="stud_cv_Desired_employment" class="lykeion" type="text" id="stud_cv_Desired_employment"  value="'.$this->Desired_employment.'"/> ';
+		 <label>Desired employment</label> <input name="stud_cv_Desired_employment" class="lykeion" type="text" id="stud_cv_Desired_employment"  value="'.stripcslashes($this->Desired_employment).'"/> ';
                  echo ' 
                      <input type="submit" name="student_cv_edit_personal" class="btn" value="" />
 		 
@@ -516,13 +516,13 @@ class Students_cv{
                     for($j=2020;$j>=1980;$j--) echo '<option>'.$j.'</option>';
                     echo '</select><br>
                     
-		 <label>Occupation or position held</label> <textarea style="resize: none;" name="stud_cv_Occupation'.$i.'" class="lykeion" id="stud_cv_Occupation'.$i.'" rows="5" cols="48" >'.$this->position[$i].'</textarea>
-		 <label>Main activities and responsibilities</label> <textarea style="resize: none;" name="stud_cv_Responsibilities'.$i.'" class="lykeion" id="stud_cv_Responsibilities'.$i.'" rows="5" cols="48"  >'.$this->activities[$i].'</textarea> 
-                     <label>Name of employer</label> <input type="text" name="stud_cv_Name'.$i.'" class="lykeion" id="stud_cv_Name'.$i.'"  value="'.$this->work_name[$i].'">
-		 <label>Address of employer</label> <input type="text" name="stud_cv_address'.$i.'" class="lykeion" id="stud_cv_address'.$i.'"    value="'.$this->work_adress[$i].'"> 
-                 <label>City of employer</label> <input type="text" name="stud_cv_work_city'.$i.'" class="lykeion" id="stud_cv_work_city'.$i.'"  value="'.$this->work_city[$i].'"> 
-                 <label>Country of employer</label> <input type="text" name="stud_cv_work_country'.$i.'" class="lykeion" id="stud_cv_work_country'.$i.'"  value="'.$this->work_country[$i].'"> 
-                <label>Type of business or sector</label> <input name="stud_cv_Type'.$i.'" class="lykeion" type="text" id="stud_cv_Type'.$i.'"  value="'.$this->sector[$i].'"/>
+		 <label>Occupation or position held</label> <textarea style="resize: none;" name="stud_cv_Occupation'.$i.'" class="lykeion" id="stud_cv_Occupation'.$i.'" rows="5" cols="48" >'.stripcslashes($this->position[$i]).'</textarea>
+		 <label>Main activities and responsibilities</label> <textarea style="resize: none;" name="stud_cv_Responsibilities'.$i.'" class="lykeion" id="stud_cv_Responsibilities'.$i.'" rows="5" cols="48"  >'.stripcslashes($this->activities[$i]).'</textarea> 
+                     <label>Name of employer</label> <input type="text" name="stud_cv_Name'.$i.'" class="lykeion" id="stud_cv_Name'.$i.'"  value="'.stripcslashes($this->work_name[$i]).'">
+		 <label>Address of employer</label> <input type="text" name="stud_cv_address'.$i.'" class="lykeion" id="stud_cv_address'.$i.'"    value="'.stripcslashes($this->work_adress[$i]).'"> 
+                 <label>City of employer</label> <input type="text" name="stud_cv_work_city'.$i.'" class="lykeion" id="stud_cv_work_city'.$i.'"  value="'.stripcslashes($this->work_city[$i]).'"> 
+                 <label>Country of employer</label> <input type="text" name="stud_cv_work_country'.$i.'" class="lykeion" id="stud_cv_work_country'.$i.'"  value="'.stripcslashes($this->work_country[$i]).'"> 
+                <label>Type of business or sector</label> <input name="stud_cv_Type'.$i.'" class="lykeion" type="text" id="stud_cv_Type'.$i.'"  value="'.stripcslashes($this->sector[$i]).'"/>
                 <label><a href=javascript:showhide("work'.$i.'",'.$this->work_id[$i].');>Delete this work</a></label>
                 </div><br><br><br>';
                 
@@ -561,15 +561,15 @@ class Students_cv{
                     for($j=2020;$j>=1980;$j--) echo '<option>'.$j.'</option>';
                     echo '</select><br>
                    
-		 <label>Title of qualification awarded</label> <input type="text" name="stud_cv_title'.$i.'" class="lykeion" id="stud_cv_title'.$i.'"  value="'.$this->title[$i].'">
-		 <label>Principal subjects/occupational skills covered</label> <textarea style="resize: none;" name="stud_cv_subject'.$i.'" class="lykeion" id="stud_cv_subject'.$i.'" rows="5" cols="48"  >'.$this->subject[$i].'</textarea>
-		 <label>Name of organisation providing education or training</label> <input type="text" name="stud_cv_org_name'.$i.'" class="lykeion" id="stud_cv_org_name'.$i.'"   value="'.$this->org_name[$i].'"> <br><br>
-		<label>Type of organisation providing education or training</label> <input type="text" name="stud_cv_org_type'.$i.'" class="lykeion" id="stud_cv_org_type'.$i.'"  value="'.$this->org_type[$i].'"> <br><br>
-                <label>Address of organisation</label> <input type="text" name="stud_cv_org_address'.$i.'" class="lykeion" id="stud_cv_org_address'.$i.'"    value="'.$this->org_address[$i].'"> 
-                 <label>City of organisation</label> <input type="text" name="stud_cv_org_city'.$i.'" class="lykeion" id="stud_cv_org_city'.$i.'"  value="'.$this->org_city[$i].'"> 
-                     <label>Country of organisation</label> <input type="text" name="stud_cv_org_country'.$i.'" class="lykeion" id="stud_cv_org_country'.$i.'"  value="'.$this->org_country[$i].'"> 
-                <label>Level in national or international classification</label> <input type="text" name="stud_cv_level'.$i.'" class="lykeion" id="stud_cv_level'.$i.'"  value="'.$this->edu_level[$i].'" list="level-list"/> <datalist id="level-list"> <option value="Bachelor"> <option value="Master"> <option value="PhD"> <option value="High School"></datalist><br><br>
-                <label>Education field</label> <input name="stud_cv_field'.$i.'" class="lykeion" type="text" id="stud_cv_field'.$i.'"  value="'.$this->edu_field[$i].'" list="field-list"/><datalist id="field-list"><option value="Computer Science and Informatics"><option value="Automatic Control and Electronics"><option value="Electric Power Engineering"><option value="Telecommunication"><option value="Civil Engineering"><option value="Mechanical Engineering"><option value="Chemical Engineering"></datalist> 
+		 <label>Title of qualification awarded</label> <input type="text" name="stud_cv_title'.$i.'" class="lykeion" id="stud_cv_title'.$i.'"  value="'.stripcslashes($this->title[$i]).'">
+		 <label>Principal subjects/occupational skills covered</label> <textarea style="resize: none;" name="stud_cv_subject'.$i.'" class="lykeion" id="stud_cv_subject'.$i.'" rows="5" cols="48"  >'.stripcslashes($this->subject[$i]).'</textarea>
+		 <label>Name of organisation providing education or training</label> <input type="text" name="stud_cv_org_name'.$i.'" class="lykeion" id="stud_cv_org_name'.$i.'"   value="'.stripcslashes($this->org_name[$i]).'"> <br><br>
+		<label>Type of organisation providing education or training</label> <input type="text" name="stud_cv_org_type'.$i.'" class="lykeion" id="stud_cv_org_type'.$i.'"  value="'.stripcslashes($this->org_type[$i]).'"> <br><br>
+                <label>Address of organisation</label> <input type="text" name="stud_cv_org_address'.$i.'" class="lykeion" id="stud_cv_org_address'.$i.'"    value="'.stripcslashes($this->org_address[$i]).'"> 
+                 <label>City of organisation</label> <input type="text" name="stud_cv_org_city'.$i.'" class="lykeion" id="stud_cv_org_city'.$i.'"  value="'.stripcslashes($this->org_city[$i]).'"> 
+                     <label>Country of organisation</label> <input type="text" name="stud_cv_org_country'.$i.'" class="lykeion" id="stud_cv_org_country'.$i.'"  value="'.stripcslashes($this->org_country[$i]).'"> 
+                <label>Level in national or international classification</label> <input type="text" name="stud_cv_level'.$i.'" class="lykeion" id="stud_cv_level'.$i.'"  value="'.stripcslashes($this->edu_level[$i]).'" list="level-list"/> <datalist id="level-list"> <option value="Bachelor"> <option value="Master"> <option value="PhD"> <option value="High School"></datalist><br><br>
+                <label>Education field</label> <input name="stud_cv_field'.$i.'" class="lykeion" type="text" id="stud_cv_field'.$i.'"  value="'.stripcslashes($this->edu_field[$i]).'" list="field-list"/><datalist id="field-list"><option value="Computer Science and Informatics"><option value="Automatic Control and Electronics"><option value="Electric Power Engineering"><option value="Telecommunication"><option value="Civil Engineering"><option value="Mechanical Engineering"><option value="Chemical Engineering"></datalist> 
                 <label><a href=javascript:showhide("education'.$i.'",'.$this->education_id[$i].');>Delete this education</a></label>
                 </div><br><br><br>';
                 
@@ -612,12 +612,12 @@ class Students_cv{
 		 <div id="new_language"></div> <input type="hidden" name="language_number" id="language_number" value="'.$number.'"> <a href=javascript:AddElement("language");>Add more languages</a>
                  
                   
-                    <label>Social skills and competences</label> <textarea style="resize: none;" name="stud_cv_Social_skills" class="lykeion" id="stud_cv_Social_skills" rows="5" cols="45">'.$this->Social_skills.'</textarea> 
-		 <label>Organisational skills and competences</label> <textarea style="resize: none;" name="stud_cv_Organisational_skills" class="lykeion" id="stud_cv_Organisational_skills" rows="5" cols="45">'.$this->Organisational_skills.'</textarea> 
-		 <label>Technical skills and competences</label> <textarea style="resize: none;" name="stud_cv_Technical_skills" class="lykeion" id="stud_cv_Technical_skills" rows="5" cols="45" >'.$this->Technical_skills.'</textarea>
-		 <label>Computer skills and competences</label> <textarea style="resize: none;" name="stud_cv_Computer_skills" class="lykeion" id="stud_cv_Computer_skills" rows="5" cols="45">'.$this->Computer_skills.'</textarea> 
-		 <label>Artistic skills and competences</label> <textarea style="resize: none;" name="stud_cv_Artistic_skills" class="lykeion" id="stud_cv_Artistic_skills" rows="5" cols="45" >'.$this->Artistic_skills.'</textarea> 
-		 <label>Other skills and competences</label> <textarea style="resize: none;" name="stud_cv_Other_skills" class="lykeion" id="stud_cv_Other_skills" rows="5" cols="45" >'.$this->Other_skills.'</textarea> ';
+                    <label>Social skills and competences</label> <textarea style="resize: none;" name="stud_cv_Social_skills" class="lykeion" id="stud_cv_Social_skills" rows="5" cols="45">'.stripcslashes($this->Social_skills).'</textarea> 
+		 <label>Organisational skills and competences</label> <textarea style="resize: none;" name="stud_cv_Organisational_skills" class="lykeion" id="stud_cv_Organisational_skills" rows="5" cols="45">'.stripcslashes($this->Organisational_skills).'</textarea> 
+		 <label>Technical skills and competences</label> <textarea style="resize: none;" name="stud_cv_Technical_skills" class="lykeion" id="stud_cv_Technical_skills" rows="5" cols="45" >'.stripcslashes($this->Technical_skills).'</textarea>
+		 <label>Computer skills and competences</label> <textarea style="resize: none;" name="stud_cv_Computer_skills" class="lykeion" id="stud_cv_Computer_skills" rows="5" cols="45">'.stripcslashes($this->Computer_skills).'</textarea> 
+		 <label>Artistic skills and competences</label> <textarea style="resize: none;" name="stud_cv_Artistic_skills" class="lykeion" id="stud_cv_Artistic_skills" rows="5" cols="45" >'.stripcslashes($this->Artistic_skills).'</textarea> 
+		 <label>Other skills and competences</label> <textarea style="resize: none;" name="stud_cv_Other_skills" class="lykeion" id="stud_cv_Other_skills" rows="5" cols="45" >'.stripcslashes($this->Other_skills).'</textarea> ';
 		if($this->Driving_licence==1){
                     echo '<label>Driving licence</label> <input name="stud_cv_Driving_licence" class="lykeion" type="checkbox" id="stud_cv_Driving_licence"   value="1" checked="yes" /> ';
                 }
@@ -625,8 +625,8 @@ class Students_cv{
                     echo '<label>Driving licence</label> <input name="stud_cv_Driving_licence" class="lykeion" type="checkbox" id="stud_cv_Driving_licence"   value="1"/> ';
                 }
 
-		 echo '<label>Additional information</label> <textarea style="resize: none;" name="stud_cv_Additional_information" class="lykeion" id="stud_cv_Additional_information" rows="5" cols="45" >'.$this->Additional_information.'</textarea> 
-		 <label>Annexes</label> <textarea style="resize: none;" name="stud_cv_Annexes" class="lykeion" id="stud_cv_Annexes" rows="5" cols="45" style="width:98%" >'.$this->Annexes.'</textarea> ';
+		 echo '<label>Additional information</label> <textarea style="resize: none;" name="stud_cv_Additional_information" class="lykeion" id="stud_cv_Additional_information" rows="5" cols="45" >'.stripcslashes($this->Additional_information).'</textarea> 
+		 <label>Annexes</label> <textarea style="resize: none;" name="stud_cv_Annexes" class="lykeion" id="stud_cv_Annexes" rows="5" cols="45" style="width:98%" >'.stripcslashes($this->Annexes).'</textarea> ';
                  echo ' <input type="submit" name="student_cv_edit_other" class="btn" value="" /> 
 
 		</form>';

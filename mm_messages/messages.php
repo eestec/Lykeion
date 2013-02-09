@@ -154,7 +154,7 @@ class messages{
 	    if($result && mysql_num_rows($result)>0)
 		    while ($podaci = mysql_fetch_array($result)){
 				echo '<div id="article-wall">
-				<h3>'.$podaci['Subject'].'</h3>';
+				<h3>'.stripcslashes($podaci['Subject']).'</h3>';
 		    	
 				//show recepients
 				$sql1="SELECT c.User FROM `mm_messages_clients` as m,`mm_messages_conv_users` as c WHERE m.ID_conversation='".$id."' AND m.User=c.User";
@@ -177,8 +177,8 @@ class messages{
                                         $name=$row['Name']." ".$row['Surname'];}
 		  			echo '<div class="article">
 		  			<h6>'.$messages_language[5].': <strong>'.$name.' ('.$podaci1['User'] .')</strong> '.$messages_language[6].': '.date("d M.Y H:i",strtotime($podaci1['Send'])).'</h6>
-		  			<h6>'.$podaci1['Headline'].'</h6>
-		  			<p>'.nl2br($podaci1['MSG']).'</p>
+		  			<h6>'.stripcslashes($podaci1['Headline']).'</h6>
+		  			<p>'.nl2br(stripcslashes($podaci1['MSG'])).'</p>
 		  			</div>';
 		  		};
 		  		
@@ -256,7 +256,7 @@ class messages{
 		
 			
 			<label>'.$messages_language[1].':</label> <textarea name="messages_msg" cols="55" rows="5" id="messages_msg"  ></textarea>
-			<input class="btn" type="submit" name="messages_send" value="">
+			<input class="send-btn" type="submit" name="messages_send" value="">
 		
 		</form>';
 	}
