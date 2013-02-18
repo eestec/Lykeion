@@ -327,7 +327,6 @@ class articles {
 							plugins : "youtube,safari,spellchecker,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,imagemanager,filemanager",
 							mode : "exact",
 							elements : "article_main_txt",
-							document_base_url : "http://www.fondacijacure.org/cms/",
 							relative_urls: false,
                     		remove_script_host : false,
 							
@@ -363,7 +362,7 @@ class articles {
 							plugins : "youtube,safari,spellchecker,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,imagemanager,filemanager",
 							mode : "exact",
 							elements : "article_intro_txt",
-							document_base_url : "http://www.fondacijacure.org/cms/",
+							document_base_url : "",
 							relative_urls: false,
                     		remove_script_host : false,
                     		

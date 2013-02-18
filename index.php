@@ -175,19 +175,18 @@ body {
 			<div class="clear"></div>
 			
 			<div id="left-section">
-				<h4>Join Lykeion!</h4>
-				<p>Dear Sir or Madam,<br><br>
-                                Lykeion is a portal, whose aim is to improve chances for students of technical science of finding internships and studies all over Europe. Of course, the opposite applies also: Lykeion offers you a chance to seek students and promote your programs among young engineers, who added their CV to Lykeion portal.
-                                By entering in cooperation with EESTEC on Lykeion project, your university will get chance to:</p>
+				
+                                <p>Lykeion is a portal  which connects students of technical fields, searching for internships and study programs, with universities who are looking to promote their programs amongst students and young engineers.</p>
+                                <p>By entering in cooperation with EESTEC on the Lykeion project, your university will be able to:</p>
                                 <ul>
-					<li>announce Bachelor, Master and PhD study programs on Lykeion portal</li>
-					<li>announce research possibilities on your university on Lykeion portal</li>
-					<li>announce news and promotional activities of company on Lykeion portal</li>
-					<li>access to Lykeion CV database of students of technical sciences from whole Europe</li>
-					<li>establish direct communication channel with most perspective students of technical sciences and soft skills</li>
+					<li>announce Bachelor, Master and PhD study programs to students;</li>
+					<li>announce your university’s research possibilities to student;</li>
+					<li>announce news and promotional activities of companies on Lykeion;</li>
+					<li>access Lykeion’s CV database of students of technical sciences;</li>
+					<li>    establish contact with the most perspective students of technical sciences;</li>
 				</ul>
 				
-				<p>Students who apply in Lykeion database are not just ordinary students. Most of these students are/were active in international students organizations, so they possess huge motivation for pursuing international career, are conscious of internationality, they have experiences in teamwork, project management and acquire wide knowledge of soft skills.
+				<p>Students who register on Lykeion are not just ordinary students; most are/were active in international students organizations, so they possess huge motivation for pursuing international careers, are conscious of internationality, have experiences in teamwork, project management and acquire a wide knowledge of soft skills.
 				</p>
 				<form id="joinnow" action="index.php?cat=un&do=register" method="post">
                                     <a href="index.php?cat=un&do=register"><input class="btn" type="image" src="images/joinnow-btn.png"/></a>
@@ -199,7 +198,7 @@ body {
 	<div id="shadow-down"></div>
 	
 	<div id="testimonials">
-		<p>Lykeion is joining highly qualified and motivated students, companies and universities in Europe inside a common platform, allowing them to advertise themselves, search the database for published information and as a result, establishing a new communication channel between all three. </p>
+		<p>Lykeion is connecting highly qualified and motivated students, companies and universities across the world inside a common platform, allowing them to advertise themselves, search the database for published information and as a result, establishing a new communication channel between all three. </p>
 		<div class="author"><a href="index.php?do=more">Read more</a></div>
 	</div>
 	
@@ -269,19 +268,18 @@ body {
 			<div class="clear"></div>
 			
 			<div id="left-section">
-				<h4>Join Lykeion!</h4>
-				<p>Dear Sir or Madam,<br><br>
-                                Lykeion is a portal, which aims to improve chances for students of technical sciences for searching internships and studies all over Europe. Also, Lykeion offers you the opportunity to seek your future employees among young engineers, who have added their CV to the Lykeion portal.
-                                By cooperating with EESTEC on the Lykeion project, your company will get chance to:</p>
+				
+                                <p>Lykeion is a portal  which connects students of technical fields, searching for internships and study programs, with companies seeking new employees amongst young engineers.
+                               By entering in cooperation with EESTEC on the Lykeion project, your university will be able to:</p>
                                 <ul>
-					<li>announce internships and jobs offers on the Lykeion portal</li>
-					<li>announce news and promotional activities of the company on the Lykeion portal</li>
-					<li>access to the Lykeion CV database of students of technical sciences from the whole Europe</li>
-					<li>establish a direct communication channel with the most perspective students of technical sciences and soft skills</li>
+					<li>announce internships and jobs offers to students;</li>
+					<li>announce news and promotional activities of the company to the students;</li>
+					<li>access to the Lykeion CV database of students of technical sciences from the whole Europe;</li>
+					<li>establish a direct communication channel with the most perspective students of technical sciences and soft skills;</li>
 					
 				</ul>
 				
-				<p>Students who apply in the Lykeion database are not just ordinary future employees. Most of these students are/were active in international students organizations such as EESTEC or IEEE student branches, so they possess huge motivation for pursuing international career, are conscious of internationality, they have experiences in teamwork, project management and acquire wide knowledge of soft skills.
+				<p>Students who register on Lykeion are not just ordinary students; most are/were active in international students organizations, so they possess huge motivation for pursuing international careers, are conscious of internationality, have experiences in teamwork, project management and acquire a wide knowledge of soft skills.
 				</p>
 				<form id="joinnow" action="index.php?cat=cm&do=register" method="post">
                                     <a href="index.php?cat=cm&do=register"><input class="btn" type="image" src="images/joinnow-btn.png"/></a>
@@ -293,7 +291,7 @@ body {
 	<div id="shadow-down"></div>
 	
 	<div id="testimonials">
-		<p>Lykeion is joining highly qualified and motivated students, companies and universities in Europe inside a common platform, allowing them to advertise themselves, search the database for published information and as a result, establishing a new communication channel between all three. </p>
+		<p>Lykeion is connecting highly qualified and motivated students, companies and universities across the world inside a common platform, allowing them to advertise themselves, search the database for published information and as a result, establishing a new communication channel between all three. </p>
 		<div class="author"><a href="index.php?do=more">Read more</a></div>
 	</div>
 	
@@ -368,15 +366,14 @@ body {
 				<h4>Join Lykeion!</h4>
 				<h5>Why</h5>
 				<ul>
-					<li>enter your CV in unique database, which is viewed by companies and universities from whole world</li>
-					<li>apply for internships and jobs in high-tech companies</li>
-					<li>apply for Bachelor, Master and PhD studies on technical universities worldwide</li>
-					<li>establish direct communication channel with most recognizable and perspective universities, companies and experts worldwide</li>
-					<li>follow up the latest news and notifications of your future employer</li>
+					<li>    Enter and update your CV to be viewed by companies and universities from all over the world;</li>
+					<li>    Apply for internships and jobs in various companies;</li>
+					<li>    Apply for Bachelor, Master and PhD studies on technical universities worldwide;</li>
+					<li>    Establish direct contact with most the recognizable and perspective universities, companies and experts worldwide;</li>
+					<li>    Follow  the latest news and notifications of your future employer.</li>
 				</ul>
 				
-				<p>By registering on Lykeion you'll extend your chances to get noted by companies and got possibility to search among hundreds 
-					of internships from technical science field and Bachelor, Master and PhD programs of technical universities from whole world.
+				<p>By registering on Lykeion you'll not only increase your chances to get noticed by companies, but will also have the possibility to search among hundreds of internships from technical field and Bachelor, Master and PhD programs of technical universities across the world.
 				</p>
 				<form id="joinnow" action="index.php?cat=st&do=register"  method="post">
                                     <a href="index.php?cat=st&do=register"><input class="btn" type="image" src="images/joinnow-btn.png"/></a>
@@ -388,7 +385,7 @@ body {
 	<div id="shadow-down"></div>
 	
 	<div id="testimonials">
-		<p>Lykeion is joining highly qualified and motivated students, companies and universities in Europe inside a common platform, allowing them to advertise themselves, search the database for published information and as a result, establishing a new communication channel between all three. </p>
+		<p>Lykeion is connecting highly qualified and motivated students, companies and universities across the world inside a common platform, allowing them to advertise themselves, search the database for published information and as a result, establishing a new communication channel between all three. </p>
 		<div class="author"><a href="index.php?do=more">Read more</a></div>
 	</div>
 	
@@ -552,9 +549,9 @@ body {
 			<h3>Our rights and obligations</h3>
 			<h5>Services Availability</h5>
 			<p align="justify">For as long as Lykeion continues to offer the Services, Lykeion shall provide and seek to update, improve and expand the Services. As a result, we allow you to access Lykeion as it may exist and be available on any given day and have no other obligations, except as expressly stated in this Agreement. We may modify, replace, refuse access to, suspend or discontinue Lykeion, partially or entirely, or change and modify prices for all or part of the Services for you or for all our users in our sole discretion. All of these changes shall be effective upon their posting on our site or by direct communication to you unless otherwise noted. Lykeion further reserves the right to withhold, remove and or discard any content available as part of your account, with or without notice if deemed by Lykeion to be contrary to this Agreement. For avoidance of doubt, Lykeion has no obligation to store, maintain or provide you a copy of any content that you or other Users provide when using the Services.</p>
-			<h3>Lykeion USER â€œDOsâ€� and â€œDONâ€™Tsâ€�</h3>
+			<h3>Lykeion USER DOs and DON'Ts</h3>
 			<p>
-			As a condition to access Lykeion, you agree to this Terms of use and to strictly observe the following DOs and DONâ€™Ts:</p>
+			As a condition to access Lykeion, you agree to this Terms of use and to strictly observe the following DOs and DON'Ts:</p>
 			<p>Do undertake the following:</p>
 			<ul type="disc">
 
@@ -577,15 +574,15 @@ body {
 			<li>Utilize or copy information, content or any data you view on and/or obtain from Lykeion to provide any service that is competitive, in Lykeionâ€™s sole discretion, with Lykeion;</li>
 			<li>Adapt, modify or create derivative works based on Lykeion or technology underlying the Services, or other Usersâ€™ content, in whole or part, except as permitted under Lykeionâ€™s developer program;</li>
 			<li>Rent, lease, loan, trade, sell/re-sell access to Lykeion or any information therein, or the equivalent, in whole or part;</li>
-			<li>Deep-link to the Site for any purpose, (i.e. including a link to a Lykeion web page other than Lykeionâ€™s home page) unless expressly authorized in writing by Lykeion or for the purpose of promoting your profile on Lykeion as set forth in â€œBranding and Autorshipâ€�;</li>
+			<li>Deep-link to the Site for any purpose, (i.e. including a link to a Lykeion web page other than Lykeionâ€™s home page) unless expressly authorized in writing by Lykeion or for the purpose of promoting your profile on Lykeion as set forth in Branding and Autorship;</li>
 			<li>Remove any copyright, trademark or other proprietary rights notices contained in or on Lykeion, including those of both Lykeion;</li>
 			<li>Remove, cover or otherwise obscure any form of advertisement included on Lykeion;</li>
 			<li>Collect, use, copy, or transfer any information, including, but not limited to, personally identifiable information obtained from Lykeion except as expressly permitted in this Terms of Use or as the owner of such information may expressly permit;</li>
 			<li>Share information of non-Users without their express consent;</li>
-			<li>Infringe or use Lykeionâ€™s brand, logos and/or trademarks, including, without limitation, using the word â€œLykeionâ€� in any business name, email, or URL or including Lykeionâ€™s trademarks and logos except as provided in the â€œBranding and Autorshipâ€�;</li>
-			<li>Use manual or automated software, devices, scripts robots, other means or processes to access, â€œscrape,â€� â€œcrawlâ€� or â€œspiderâ€� any web pages or other services contained in the site;</li>
+			<li>Infringe or use Lykeion's brand, logos and/or trademarks, including, without limitation, using the word Lykeion in any business name, email, or URL or including Lykeion's trademarks and logos except as provided in the â€œBranding and Autorship;</li>
+			<li>Use manual or automated software, devices, scripts robots, other means or processes to access, scrape or "spider" any web pages or other services contained in the site;</li>
 			<li>Use bots or other automated methods to access Lykeion, add or download contacts, send or redirect messages, or perform other activities through Lykeion, unless explicitly permitted by Lykeion;</li>
-			<li>Access, via automated or manual means or processes, Lykeion for purposes of monitoring Lykeionâ€™s availability, performance or functionality for any competitive purpose;</li>
+			<li>Access, via automated or manual means or processes, Lykeion for purposes of monitoring Lykeion's availability, performance or functionality for any competitive purpose;</li>
 			<li>Attempt to or actually access Lykeion by any means other than through the interfaces provided by Lykeion such as its mobile application or by navigating to lykeion.eestec.net using a web browser. This prohibition includes accessing or attempting to access Lykeion using any third-party service, including software-as-a-service platforms that aggregate access to multiple services, including Lykeion;</li>
 			<li>Attempt to or actually override any security component included in or underlying Lykeion;</li>
 			<li>Interfere with or disrupt or game Lykeion or the Services, including, but not limited to, any servers or networks connected to Lykeion, in particular Lykeions search algorithms.</li>
@@ -717,31 +714,34 @@ body {
 				
 				
                             <br><br>
-				  <p align="justify">Recognizing the lack of places where students, universities and companies from EECS branches would have an opportunity to find an adequate target group that matches their interests and needs, NGO EESTEC (Electrical Engineering Students European Association) created such a platform, a platform where students, companies and universities can directly reach each other. This platform is EESTEC's Lykeion platform! </p>
+				  <p align="justify">Recognizing the lack of platforms where students, universities and companies from EECS branches can come together to find an adequate target group that matches their interests and needs, NGO EESTEC (Electrical Engineering Students European Association) created such a platform: one where students, companies and universities can directly reach each other. This platform is EESTEC's portal, Lykeion! </p>
 
-                                    <p align="justify">Lykeion is joining highly qualified and motivated students, companies and universities in Europe inside a unique platform, allowing them to present themselves, search the database for needed information and individuality.
+                                    <p align="justify">Lykeion is connecting highly qualified and motivated students, companies and universities across the world inside a unique platform, allowing them to present themselves and search the database for needed information.
 
-                                    <p align="justify">For students, Lykeion presents a place for them to for internships, jobs, Bachelor, Master and Phd study programs. This, in turn, represents a new communication channel between all students and universities and companies. The huge advantage of this project is its internationality, interactivity and various study programs which are available simply by registering on the portal. Once registered, students can submit, store and edit their CV and profile page, view offers from international companies and universities and apply for internships, jobs or Bachelor/Master/PhD studies. This portal acts as a tool to attract hardworking and motivated students in accordance with corporate culture and values.</p>
+                                    <p align="justify">For students, Lykeion presents a service for them to search for internships, careers, Bachelor/Master/PhD programs. This, in turn, represents a new communication channel between all students and universities and companies. The huge advantage of this project is its internationality, interactivity and various study programs which are available simply by registering on the portal. </p>
+                                    <p align="justify">Once registered, students can submit, store and edit their CV and profile page, view offers from international companies and universities and apply for internships, jobs or Bachelor/Master/PhD studies.
+
+This portal acts as a tool to attract hardworking and motivated students in accordance with corporate culture and values.</p>
                                     <center><img src="images/lykeion.jpg" width="300"></center>
-                                    <p align="justify">The Lykeion approach to academic opportunities provides students with a sophisticated, and yet more agile way to apply for Bachelor, Master or PhD study in one place.
+                                    <p align="justify">The Lykeion approach to academic opportunities provides students with a sophisticated, and yet more agile way to apply for Bachelor/Master/PhD study in one place.
 
-                                    <p align="justify">All registered Universities have the opportunity to publish their Bachelor, Master, PhD programs and all other academic offers to Lykeion users.
+                                    <p align="justify">All registered Universities have the opportunity to publish their Bachelor/Master/PhD programs and all other academic offers to Lykeion users.
 
-                                    <p align="justify">This way, information announced by any registered University will be published on the portal, so all Lykeion members will be provided with an easy approach to academic offers. It will motivate students to apply for International educational programmes and make European educational system more powerful.</p>
+                                    <p align="justify">This way, information announced by any registered University will be published on the portal, so all Lykeion members will be provided with an easy approach to academic offers. It will motivate students to apply for International educational programmes and make educational systems more powerful.</p>
 
-                                     <p align="justify">By entering in cooperation with EESTEC on Lykeion project, universities and companies have a chance to:</p>
+                                     <p align="justify">By entering in cooperation with EESTEC on Lykeion project, universities and companies are able to:</p>
                                      <ul type="disc">
-                                    <li>Announce Bachelor, Master and PhD study programs on our portal;</li>
-                                    <li>Announce internships and jobs offers on Lykeion portal;</li>
-                                    <li>Announce research possibilities on all universities and companies on Lykeion portal;</li>
-                                    <li>Access to Lykeion CV database of students of technical sciences from whole Europe;</li>
+                                    <li>Announce Bachelor, Master and PhD study programs;</li>
+                                    <li>Announce internships and jobs offers;</li>
+                                    <li>Announce research possibilities on all universities and companies;</li>
+                                    <li>Access to Lykeion CV database of students of technical sciences;</li>
                                     <li>Establish direct communication channel with most perspective students of technical sciences;</li>
 
                                     </ul></p>
 
-                                    <p align="justify">Students who apply in Lykeion database are not just ordinary future employees. Most of these students are active in international students organizations such as EESTEC or IEEE student branches, so they possess huge motivation for pursuing international career, they have experiences in teamwork, project management and acquired wide knowledge of soft skills. 
+                                    <p align="justify">Students who register on Lykeion are not just ordinary future employees. Most of these students are active in international students organizations such as EESTEC or IEEE student branches, so they possess huge motivation for pursuing international career. They are experienced in teamwork, project management and acquire a wide knowledge of soft skills. 
 
-                                    Join Lykeion!
+                                    
                                     </p>
 				  <p><strong>JOIN NOW</strong></p>
                                     
