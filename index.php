@@ -1523,7 +1523,7 @@ This portal acts as a tool to attract hardworking and motivated students in acco
 			<div class="menu">
 				<a href="index.php">Home</a>  |  <a href="http://eestec.net/">What is EESTEC</a>  |  <a href="index.php?to=student">Students</a>  |  <a href="index.php?to=company">Companies</a>  |  <a href="index.php?to=university">Universities</a>  |  <a href="index.php?do=contact">Contacts</a>
 			</div>
-			<div class="copyright">Copyright &copy; 2012 EESTEC All rights reserved.</div>
+			<div class="copyright">Copyright &copy; <?php echo date("Y") ?> EESTEC All rights reserved.</div>
 		</div>
 	</div>
 </div>
