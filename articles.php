@@ -101,15 +101,7 @@ class articles {
 		if($this->type=='intership' || $this->type=='job' ){ $this->jobtype_id=$this->jobtype->save_to_database(); } else { $this->jobtype_id=-1; };
 		if($this->type=='scolarship') { $this->scolarship_id=$this->scolarship->save_to_database(); } else {$this->scolarship_id=-1;};
 		$sql="INSERT INTO `articles` VALUES(NULL,'".htmlentities($this->title)."','".$this->intro."','".$this->text."','".$this->image->getimage()."','".$this->category."','".$this->comments."','".$this->editable."','0','".$this->publish."','".$this->gallery."','".$this->metatags."','".$this->jobtype_id."','".$this->scolarship_id."','Pending','".$_SESSION['id']."','".$_SESSION['rank']."',NOW(),0)";
-                $db->query($sql);
-                echo '
-				<script type="text/javascript">
-					function errorhide(){
-						$("#error_message").hide();
-					}
-				</script>
-				<div id="error_message"><br/>Article added, but it needs to be approved by Administrator.<br/><br/><a href="#" onclick="errorhide()">Close</a><br/></div>';
-                
+                $db->query($sql);				            
 	}
 	
 	public function update_to_database(){
@@ -144,13 +136,6 @@ class articles {
 		}
 		$sql="UPDATE `articles` SET title='".htmlentities($this->title)."', intro='".$this->intro."', tekst='".$this->text."', ".$im."  category='".$this->category."' WHERE ID='".$this->id."'";
 		$db->query($sql);
-                echo '
-					<script type="text/javascript">
-						function errorhide(){
-							$("#error_message").hide();
-						}
-					</script>
-					<div id="error_message"><br/><br/>Your article is updated now.<br/><br/><a href="#" onclick="errorhide()">Close</a><br/></div>';
 	}
 	
 	public function show_article_form($typ='news'){
@@ -289,7 +274,7 @@ class articles {
 		$this->pbls->show_publish_form();
 		
 		echo('
-		  <input type="submit" name="article_save" class="btn" value="" />
+		  <input type="submit" name="article_save" class="btn" value="" onclick="toastr.info(\'Article added, but it needs to be approved by Administrator.\')" />
 		   </form>
 		');	
 	}
@@ -412,7 +397,7 @@ class articles {
 		
 		//$this->mtg->show_metatag_form();
 		echo '
-		  <input type="submit" name="article_edit" class="btn" value="" />
+		  <input type="submit" name="article_edit" class="btn" value="" onclick="toastr.success(\'Your article is updated now.\')"/>
 		   </form>
 		';	
 	}

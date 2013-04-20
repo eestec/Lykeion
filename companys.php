@@ -372,7 +372,7 @@ class companys {
 		 <label>Facebook</label><input name="cm_Facebook" class="lykeion_textbox" type="text" id="cm_Facebook"  value="'.$this->Facebook.'"/> 
 		 <label>LinkedIn</label><input name="cm_Linkedin" class="lykeion_textbox" type="text" id="cm_Linkedin"  value="'.$this->Linkedin.'"/> 
 		 <label>Twitter</label><input name="cm_Twitter" class="lykeion_textbox" type="text" id="cm_Twitter"  value="'.$this->Twitter.'"/> 
-		<input type="submit" name="company_edit" class="btn" value="" />
+		<input type="submit" name="company_edit" class="btn" value="" onclick="toastr.info(\'Company info successfully edited\')"/>
 		
 		</form>';
 	}

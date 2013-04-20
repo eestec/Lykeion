@@ -42,9 +42,11 @@
 <link href="favicon.ico" rel="shortcut icon">
 <title>Lykeion - A place where students, companies and universities can directly reach each other</title>
 <link type="text/css" rel="stylesheet" href="css/styles.css">
+<link type="text/css" rel="stylesheet" href="css/toastr.css">
 <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script>
 <script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/toastr.js"></script>
 
 <link href="mm_messages/mm_messages_style.css" rel="stylesheet" type="text/css" />
 
